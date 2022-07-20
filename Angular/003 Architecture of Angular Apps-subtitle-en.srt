@@ -1,0 +1,230 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, now that you know what Angular
+
+2
+00:00:04,000 --> 00:00:08,000
+is, let's take a look at the architecture of Angular applications.
+
+3
+00:00:08,000 --> 00:00:12,000
+A lot of modern applications have at least two parts,
+
+4
+00:00:12,000 --> 00:00:16,000
+a front-end and a back-end. The front-end also
+
+5
+00:00:16,000 --> 00:00:20,000
+called the client, is the part that runs in the web browser
+
+6
+00:00:20,000 --> 00:00:24,000
+and this is what the user sees and interacts with. So,
+
+7
+00:00:24,000 --> 00:00:28,000
+it essentially includes the user interface, or UI of an application.
+
+8
+00:00:28,000 --> 00:00:32,000
+We use HTML, CSS, TypeScript,
+
+9
+00:00:32,000 --> 00:00:36,000
+and Angular to build the front-end. The back-end sits on a
+
+10
+00:00:36,000 --> 00:00:40,000
+web server, or multiple web servers on the cloud, and is
+
+11
+00:00:40,000 --> 00:00:44,000
+responsible for storing the data and doing any kind of processing.
+
+12
+00:00:44,000 --> 00:00:48,000
+Our front-end, or the client app, talks to the back-end
+
+13
+00:00:48,000 --> 00:00:52,000
+to get or save the data. One of the questions that a lot of
+
+14
+00:00:52,000 --> 00:00:56,000
+beginners ask me is, Mosh, how do I save my data in Angular?
+
+15
+00:00:56,000 --> 00:01:00,000
+Well, you don't, in most cases you don't save the data on the
+
+16
+00:01:00,000 --> 00:01:04,000
+client, because it can easily disappear as the user clears
+
+17
+00:01:04,000 --> 00:01:08,000
+the browser data, or moves to a different computer.
+
+18
+00:01:08,000 --> 00:01:12,000
+That's why we store the data on the server. So here we often have
+
+19
+00:01:12,000 --> 00:01:16,000
+one or more databases, as well as a bunch of
+
+20
+00:01:16,000 --> 00:01:20,000
+HTTP services or API's to make this data available to
+
+21
+00:01:20,000 --> 00:01:24,000
+the clients. In case you don't know, API stands for
+
+22
+00:01:24,000 --> 00:01:28,000
+Application Programming Interface. Now if you put this
+
+23
+00:01:28,000 --> 00:01:32,000
+fancy name aside, these HTTP Services, or API's
+
+24
+00:01:32,000 --> 00:01:36,000
+are essentially end points that are accessible via the HTTP
+
+25
+00:01:36,000 --> 00:01:40,000
+protocol. So we can call them using simple HTTP
+
+26
+00:01:40,000 --> 00:01:44,000
+requests, to get or to save the data. If that's
+
+27
+00:01:44,000 --> 00:01:48,000
+too much technical jargon here, let me give you a metaphor. Think of a port
+
+28
+00:01:48,000 --> 00:01:52,000
+where ships load or unload. These are
+
+29
+00:01:52,000 --> 00:01:56,000
+points to get loads in and out of a town, right?
+
+30
+00:01:56,000 --> 00:02:00,000
+Now imagine these ports are HTTP endpoints, ships
+
+31
+00:02:00,000 --> 00:02:04,000
+are HTTP requests, and loads are data. So just like
+
+32
+00:02:04,000 --> 00:02:08,000
+we can send the ship to a port to get some load and bring to us
+
+33
+00:02:08,000 --> 00:02:12,000
+a client app sends an HTTP request to an endpoint,
+
+34
+00:02:12,000 --> 00:02:16,000
+to get some data. So this is how the big picture works.
+
+35
+00:02:16,000 --> 00:02:20,000
+Our web applications have a front-end and a back-end
+
+36
+00:02:20,000 --> 00:02:24,000
+On the back-end we have more than one databases, and API
+
+37
+00:02:24,000 --> 00:02:28,000
+is what makes the data available to the clients. For a large
+
+38
+00:02:28,000 --> 00:02:32,000
+application, around a complex domain, this is where we implement
+
+39
+00:02:32,000 --> 00:02:36,000
+the business logic of the application, by calculating the
+
+40
+00:02:36,000 --> 00:02:40,000
+tax and shipping costs, based on various parameters.
+
+41
+00:02:40,000 --> 00:02:44,000
+The front-end or the client on the other hand, is all about the presentation.
+
+42
+00:02:44,000 --> 00:02:48,000
+So here we have our HTML templates,
+
+43
+00:02:48,000 --> 00:02:52,000
+As well as the presentation logic of our application. This
+
+44
+00:02:52,000 --> 00:02:56,000
+lodging is all about displaying data and responding to user
+
+45
+00:02:56,000 --> 00:03:00,000
+actions like what should happen when the user clicks on a button
+
+46
+00:03:00,000 --> 00:03:04,000
+or navigates away from a page. These are examples of
+
+47
+00:03:04,000 --> 00:03:08,000
+the presentation logic, or the logic that is all about the presentation
+
+48
+00:03:08,000 --> 00:03:12,000
+aspect of an application. Now in terms of
+
+49
+00:03:12,000 --> 00:03:16,000
+implementation, building the back-end requires familiarity with other
+
+50
+00:03:16,000 --> 00:03:20,000
+languages and frameworks, and that's completely outside the scope of
+
+51
+00:03:20,000 --> 00:03:24,000
+building client apps with Angular. So as an Angular or
+
+52
+00:03:24,000 --> 00:03:28,000
+front-end developer, you don't have to worry about this. This is the job of
+
+53
+00:03:28,000 --> 00:03:32,000
+a back-end developer, or full stack developer who knows
+
+54
+00:03:32,000 --> 00:03:36,000
+both the front-end and the back-end. So for the purpose of this course
+
+55
+00:03:36,000 --> 00:03:40,000
+we're going to focus on the front-end, and if you want to learn about the back-end,
+
+56
+00:03:40,000 --> 00:03:44,000
+development you can always pick up a course later down the road
+
+57
+00:03:44,000 --> 00:03:48,000
+but for now let's just focus on one thing and do it well.
+
+
+

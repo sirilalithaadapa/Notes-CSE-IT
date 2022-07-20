@@ -1,0 +1,146 @@
+1
+00:00:00,000 --> 00:00:04,000
+So with Angular CLI
+
+2
+00:00:04,000 --> 00:00:08,000
+in place, now we can create a new Angular project. So
+
+3
+00:00:08,000 --> 00:00:12,000
+we type ng new, and let's call this project
+
+4
+00:00:12,000 --> 00:00:16,000
+hello-world.
+
+5
+00:00:16,000 --> 00:00:20,000
+So this generates a bunch of files and folders, and then
+
+6
+00:00:20,000 --> 00:00:24,000
+it's going to use NPM to download the third party libraries.
+
+7
+00:00:24,000 --> 00:00:28,000
+Alright, our project is successfully created.
+
+8
+00:00:28,000 --> 00:00:32,000
+Now, to start coding we need a code editor.
+
+9
+00:00:32,000 --> 00:00:36,000
+The editor I'm going to use in this course is Visual Studio Code, or
+
+10
+00:00:36,000 --> 00:00:40,000
+vs code. It's a beautiful, cross platform
+
+11
+00:00:40,000 --> 00:00:44,000
+light weight editor, you can download at code.visutalstudio.com.
+
+12
+00:00:44,000 --> 00:00:48,000
+If you don't like this editor, feel free to use any editors that
+
+13
+00:00:48,000 --> 00:00:52,000
+you prefer, you can use Sublime, you can use Atom, or any editors.
+
+14
+00:00:52,000 --> 00:00:56,000
+Now if you're going to use vs code, I want you to add it to
+
+15
+00:00:56,000 --> 00:01:00,000
+the path, so you can easily open it from the terminal. So here,
+
+16
+00:01:00,000 --> 00:01:04,000
+if you're using Mac, press Shift, Command, and
+
+17
+00:01:04,000 --> 00:01:08,000
+P, or if you're using Windows, press Shift, Control,
+
+18
+00:01:08,000 --> 00:01:12,000
+and P. This opens up the command palette.
+
+19
+00:01:12,000 --> 00:01:16,000
+Now, here type, code, look at this command here.
+
+20
+00:01:16,000 --> 00:01:20,000
+Install, code command, in path.
+
+21
+00:01:20,000 --> 00:01:24,000
+With this we can go to the terminal,
+
+22
+00:01:24,000 --> 00:01:28,000
+in the folder where we created a new project hello-world, simply type
+
+23
+00:01:28,000 --> 00:01:32,000
+code, period. So, this opens
+
+24
+00:01:32,000 --> 00:01:36,000
+vs code, pointing to the current folder. Now in the next lecture, we're going to look at
+
+25
+00:01:36,000 --> 00:01:40,000
+the structure, you're going to learn what files and folders we have here, but before
+
+26
+00:01:40,000 --> 00:01:44,000
+we get there, let's make sure that this application works.
+
+27
+00:01:44,000 --> 00:01:48,000
+So, back in the terminal, once again we use Angular CLI to load
+
+28
+00:01:48,000 --> 00:01:52,000
+our application in the web server. So we type ng,
+
+29
+00:01:52,000 --> 00:01:56,000
+space, serve.
+
+30
+00:01:56,000 --> 00:02:00,000
+So now we have a light development server listening
+
+31
+00:02:00,000 --> 00:02:04,000
+on local host port 4200, and Angular
+
+32
+00:02:04,000 --> 00:02:08,000
+CLI also compiled our application, it generated bundles,
+
+33
+00:02:08,000 --> 00:02:12,000
+for JavaScript and CSS files, so we can open up
+
+34
+00:02:12,000 --> 00:02:16,000
+Chrome, and head over to localhost, port 4200.
+
+35
+00:02:16,000 --> 00:02:20,000
+Beautiful! This is our first Angular app.
+
+36
+00:02:20,000 --> 00:02:24,000
+Next, we're going to look at the structure of our new Angular project.
+
+
+

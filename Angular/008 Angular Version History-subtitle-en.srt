@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:04,000
+One question that often comes up,
+
+2
+00:00:04,000 --> 00:00:08,000
+is what's the difference between AngularJS, Angular 2, and
+
+3
+00:00:08,000 --> 00:00:12,000
+Angular 4, and how did we jump from Angular 2, to Angular 4?
+
+4
+00:00:12,000 --> 00:00:16,000
+Well, AngularJS was introduced in 2010,
+
+5
+00:00:16,000 --> 00:00:20,000
+as a JavaScript framework for building client applications.
+
+6
+00:00:20,000 --> 00:00:24,000
+Soon it gained popularity, and Angular team started
+
+7
+00:00:24,000 --> 00:00:28,000
+adding new features to the core, but the framework was not designed
+
+8
+00:00:28,000 --> 00:00:32,000
+with the needs of today's applications in mind. Plus, it was
+
+9
+00:00:32,000 --> 00:00:36,000
+overly complex, so Angular team decided to rewrite
+
+10
+00:00:36,000 --> 00:00:40,000
+the original framework using TypeScript, and as a result,
+
+11
+00:00:40,000 --> 00:00:44,000
+Angular 2 came out in mid 2016. This
+
+12
+00:00:44,000 --> 00:00:48,000
+new version is entirely different from Angular 1, to the extent
+
+13
+00:00:48,000 --> 00:00:52,000
+that you can think of it as a completely different framework.
+
+14
+00:00:52,000 --> 00:00:56,000
+Now, this made a lot of developers unhappy. Because they had a lot of
+
+15
+00:00:56,000 --> 00:01:00,000
+applications built with Angular 1, with each application over a
+
+16
+00:01:00,000 --> 00:01:04,000
+few thousand lines of code that had to be rewritten. But over
+
+17
+00:01:04,000 --> 00:01:08,000
+all, I personally like the direction that Angular team took,
+
+18
+00:01:08,000 --> 00:01:12,000
+and how they rebuilt Angular with TypeScript. This is a much better
+
+19
+00:01:12,000 --> 00:01:16,000
+framework, it's a lot cleaner, and it's a lot easier
+
+20
+00:01:16,000 --> 00:01:20,000
+to understand and work with. Now after a few minor upgrades to Angular 2,
+
+21
+00:01:20,000 --> 00:01:24,000
+something strange happened. We were up to Angular 2.3,
+
+22
+00:01:24,000 --> 00:01:28,000
+And then all of a sudden, Angular 4 came out, so a lot of developers
+
+23
+00:01:28,000 --> 00:01:32,000
+including myself, wondered what happened to Angular 3?
+
+24
+00:01:32,000 --> 00:01:36,000
+We thought we missed something really big here. But unlike
+
+25
+00:01:36,000 --> 00:01:40,000
+Angular 2, Angular 4 was not a new framework with a lot of breaking changes,
+
+26
+00:01:40,000 --> 00:01:44,000
+in fact it wasn't even a major upgrade. So let me explain
+
+27
+00:01:44,000 --> 00:01:48,000
+what happened, Angular consists of a few different libraries,
+
+28
+00:01:48,000 --> 00:01:52,000
+that are distributed as separate Node packages by
+
+29
+00:01:52,000 --> 00:01:56,000
+an NMP, for example, we have the core library that we use
+
+30
+00:01:56,000 --> 00:02:00,000
+in every Application, we have Angular compiler,
+
+31
+00:02:00,000 --> 00:02:04,000
+HTTP for calling HTTP services, we have Angular
+
+32
+00:02:04,000 --> 00:02:08,000
+router for adding navigation to applications, and a few other libraries.
+
+33
+00:02:08,000 --> 00:02:12,000
+Now all these libraries were versioned the same,
+
+34
+00:02:12,000 --> 00:02:16,000
+except the router library. So in order to
+
+35
+00:02:16,000 --> 00:02:20,000
+align these versions and avoid confusion in the future, Angular team
+
+36
+00:02:20,000 --> 00:02:24,000
+decided to go straight to an Angular version 4. So
+
+37
+00:02:24,000 --> 00:02:28,000
+in a sense, Angular 4 is not a major upgrade to Angular 2, and you can
+
+38
+00:02:28,000 --> 00:02:32,000
+think of it as Angular 2.4, as simple as that. Now,
+
+39
+00:02:32,000 --> 00:02:36,000
+after all this confusion in the community about Angular versions,
+
+40
+00:02:36,000 --> 00:02:40,000
+the team decided to drop the version suffix and simply call the
+
+41
+00:02:40,000 --> 00:02:44,000
+framework Angular. So now we have two kinds of Angular,
+
+42
+00:02:44,000 --> 00:02:48,000
+we have Angular JS, which is the first generation of Angular written
+
+43
+00:02:48,000 --> 00:02:52,000
+in JavaScript, and it's going to die sooner or later.
+
+44
+00:02:52,000 --> 00:02:56,000
+And we also have Angular, which refers to Angular 2 or later.
+
+45
+00:02:56,000 --> 00:03:00,000
+In our discussions, in our articles, and
+
+46
+00:03:00,000 --> 00:03:04,000
+whenever we ant to talk about Angular 2 or later, we should really use the word
+
+47
+00:03:04,000 --> 00:03:08,000
+Angular, like I'm an Angular developer, instead of I'm an Angular 2 developer.
+
+48
+00:03:08,000 --> 00:03:12,000
+Or, I'm an Angular 4 developer. See, it's really wierd.
+
+49
+00:03:12,000 --> 00:03:16,000
+We should use versions only when we need to talk about this
+
+50
+00:03:16,000 --> 00:03:20,000
+specific release. For example, when we want to upgrade Angular 4,
+
+51
+00:03:20,000 --> 00:03:24,000
+to Angular 5, then everybody knows what is the
+
+52
+00:03:24,000 --> 00:03:28,000
+scope of this upgrade and what are the potential breaking changes that can
+
+53
+00:03:28,000 --> 00:03:32,000
+impact an application. So this is all about Angular
+
+54
+00:03:32,000 --> 00:03:34,000
+version history.
+

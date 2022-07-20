@@ -1,0 +1,416 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, now let's see what files and
+
+2
+00:00:04,000 --> 00:00:08,000
+folders we have in this new project. So the first folder we have here
+
+3
+00:00:08,000 --> 00:00:12,000
+is e2e, which stands for end to end. And this is where
+
+4
+00:00:12,000 --> 00:00:16,000
+we write end to end tests for our application. If you have not
+
+5
+00:00:16,000 --> 00:00:20,000
+worked with end to end tests, these are basically automated tests
+
+6
+00:00:20,000 --> 00:00:24,000
+that simulate a real user, so we can write code to
+
+7
+00:00:24,000 --> 00:00:28,000
+launch our browser, navigate to the homepage of our application, click
+
+8
+00:00:28,000 --> 00:00:32,000
+a few links here and there, fill out a form, click a button, and then
+
+9
+00:00:32,000 --> 00:00:36,000
+assert that there is something on the page. This is an example of an end to end test.
+
+10
+00:00:36,000 --> 00:00:40,000
+Now, that's beyond this course, so we don't have to worry about it yet.
+
+11
+00:00:40,000 --> 00:00:44,000
+Below that we have node_modules. And this is
+
+12
+00:00:44,000 --> 00:00:48,000
+where we store all the third party libraries that our
+
+13
+00:00:48,000 --> 00:00:52,000
+application may depend upon. Now this folder is purely for development,
+
+14
+00:00:52,000 --> 00:00:56,000
+so when we compile our application, parts of this third party libraries
+
+15
+00:00:56,000 --> 00:01:00,000
+are put in a bundle and deployed with our application.
+
+16
+00:01:00,000 --> 00:01:04,000
+So we're not going to deploy this node_modules folder to
+
+17
+00:01:04,000 --> 00:01:08,000
+a server. You're going to see this later in the course. Below that,
+
+18
+00:01:08,000 --> 00:01:12,000
+we have the src folder. And this is where we have the actual
+
+19
+00:01:12,000 --> 00:01:16,000
+source code of our application. So we have this app
+
+20
+00:01:16,000 --> 00:01:20,000
+folder here, and inside this folder here, we have a module
+
+21
+00:01:20,000 --> 00:01:24,000
+and a component, so every application has at least one module
+
+22
+00:01:24,000 --> 00:01:28,000
+and one component. You're going to get familiar with these components and modules.
+
+23
+00:01:28,000 --> 00:01:32,000
+very soon. Below that, we have this assets folder,
+
+24
+00:01:32,000 --> 00:01:36,000
+where we store the static assets of our application.
+
+25
+00:01:36,000 --> 00:01:40,000
+So, if we have any image files, any text files, any icons,
+
+26
+00:01:40,000 --> 00:01:44,000
+all of these, go here. Below that, we have
+
+27
+00:01:44,000 --> 00:01:48,000
+this environments folder. And this is where we store configuration settings,
+
+28
+00:01:48,000 --> 00:01:52,000
+for different environments. So we have one file for the production environment,
+
+29
+00:01:52,000 --> 00:01:56,000
+and the other, for the development environment.
+
+30
+00:01:56,000 --> 00:02:00,000
+Now, the other files we have in the src folder are favorite icon
+
+31
+00:02:00,000 --> 00:02:04,000
+which is the icon displayed in the browser, we have index
+
+32
+00:02:04,000 --> 00:02:08,000
+.html which is a very simple html file that contains
+
+33
+00:02:08,000 --> 00:02:12,000
+our Angular application, so note that here we don't have any references
+
+34
+00:02:12,000 --> 00:02:16,000
+to a script or a style sheet. These references will be dynamically
+
+35
+00:02:16,000 --> 00:02:20,000
+inserted into this page, as I will show you later in this course.
+
+36
+00:02:20,000 --> 00:02:24,000
+Now below that, we have this main file which is a TypeScript file,
+
+37
+00:02:24,000 --> 00:02:28,000
+and this is basically the starting point of our application.
+
+38
+00:02:28,000 --> 00:02:32,000
+So in a lot of programming languages, we have the concept of
+
+39
+00:02:32,000 --> 00:02:36,000
+the main method, which is the starting point of a program. We have the same
+
+40
+00:02:36,000 --> 00:02:40,000
+concept in our Angular applications, so all we are doing here is
+
+41
+00:02:40,000 --> 00:02:44,000
+boot strapping the main module of our application, which is in this case
+
+42
+00:02:44,000 --> 00:02:48,000
+AppModule, so Angular loads this module
+
+43
+00:02:48,000 --> 00:02:52,000
+and everything else starts from there. We have this
+
+44
+00:02:52,000 --> 00:02:56,000
+polyfills file, which basically imports some scripts
+
+45
+00:02:56,000 --> 00:03:00,000
+that are required for running Angular. Because the Angular framework uses features
+
+46
+00:03:00,000 --> 00:03:04,000
+of JavaScript that are not available in the current version of JavaScript
+
+47
+00:03:04,000 --> 00:03:08,000
+supported by most browsers out there. So these polyfills
+
+48
+00:03:08,000 --> 00:03:12,000
+fill the gap between the features of JavaScript that Angular needs
+
+49
+00:03:12,000 --> 00:03:16,000
+and the features supported by the current browsers.
+
+50
+00:03:16,000 --> 00:03:20,000
+Below that we have styles.css, and
+
+51
+00:03:20,000 --> 00:03:24,000
+this is where we add global styles for our application.
+
+52
+00:03:24,000 --> 00:03:28,000
+And also each page or each component can have its own styles as you will see
+
+53
+00:03:28,000 --> 00:03:32,000
+later in the course. Below that we have test.ts
+
+54
+00:03:32,000 --> 00:03:36,000
+which is basically used for setting up our testing environment.
+
+55
+00:03:36,000 --> 00:03:40,000
+Again, for now, we don't have to worry about this.
+
+56
+00:03:40,000 --> 00:03:44,000
+Outside the src folder, you have a configuration folder for Angular cli
+
+57
+00:03:44,000 --> 00:03:48,000
+its pretty standard configuration, you don't have to worry about this for
+
+58
+00:03:48,000 --> 00:03:52,000
+the most part, below that we have editorconfig,
+
+59
+00:03:52,000 --> 00:03:56,000
+so if you're working in a team environment, you want to make sure that
+
+60
+00:03:56,000 --> 00:04:00,000
+all developers in the team use the same settings in their editors.
+
+61
+00:04:00,000 --> 00:04:04,000
+So this is where you store the settings. You have this gitignore
+
+62
+00:04:04,000 --> 00:04:08,000
+file, which is basically for excluding certain files and
+
+63
+00:04:08,000 --> 00:04:12,000
+folders from your git repository. If you have not worked with git,
+
+64
+00:04:12,000 --> 00:04:16,000
+don't worry, it's not something that you need to know in order to build applications
+
+65
+00:04:16,000 --> 00:04:20,000
+with Angular, it's basically a tool for managing and versioning
+
+66
+00:04:20,000 --> 00:04:24,000
+your source code. Now below that we have karma
+
+67
+00:04:24,000 --> 00:04:28,000
+.config.js, which is a configuration file
+
+68
+00:04:28,000 --> 00:04:32,000
+for karma which is a test runner for JavaScript code
+
+69
+00:04:32,000 --> 00:04:36,000
+Again, we're not going to worry about running tests at this stage. Now below that
+
+70
+00:04:36,000 --> 00:04:40,000
+we have an imported file, package.json.
+
+71
+00:04:40,000 --> 00:04:44,000
+This is a standard file that every node project has.
+
+72
+00:04:44,000 --> 00:04:48,000
+Apart from a bunch of basic settings here, like the name and version of
+
+73
+00:04:48,000 --> 00:04:52,000
+your application, we have this setting here, dependencies,
+
+74
+00:04:52,000 --> 00:04:56,000
+which determines the libraries your application is dependent opon
+
+75
+00:04:56,000 --> 00:05:00,000
+So here you can see we have nine references
+
+76
+00:05:00,000 --> 00:05:04,000
+to Angular libraries, all these libraries,
+
+77
+00:05:04,000 --> 00:05:08,000
+start with @angular, and after that we have the name of the library.
+
+78
+00:05:08,000 --> 00:05:12,000
+So the first library here is for animations, if you're not going to use animations
+
+79
+00:05:12,000 --> 00:05:16,000
+in your application you can delete this here. So in the future, as
+
+80
+00:05:16,000 --> 00:05:20,000
+we use third party libraries, you will see them listed here under
+
+81
+00:05:20,000 --> 00:05:24,000
+the dependencies. Now, below that we also have
+
+82
+00:05:24,000 --> 00:05:28,000
+another setting or another key called devdependencies.
+
+83
+00:05:28,000 --> 00:05:32,000
+And these are the libraries that we need in order to develop
+
+84
+00:05:32,000 --> 00:05:36,000
+this application. So we don't need these to run our application on a production
+
+85
+00:05:36,000 --> 00:05:40,000
+server, these are purely for a developer machine.
+
+86
+00:05:40,000 --> 00:05:44,000
+So here we have a reference to angular/cli which we are all familiar with.
+
+87
+00:05:44,000 --> 00:05:48,000
+We also have a few other references to karma, which is a
+
+88
+00:05:48,000 --> 00:05:52,000
+again a test runner for JavaScript code. Now below this package that json
+
+89
+00:05:52,000 --> 00:05:56,000
+we have protractor.config.js,
+
+90
+00:05:56,000 --> 00:06:00,000
+which is basically a tool for running end to end tests,
+
+91
+00:06:00,000 --> 00:06:04,000
+for Angular. Again, we're not going to worry about it, and another file here is
+
+92
+00:06:04,000 --> 00:06:08,000
+tsconfig, which has a bunch of settings for your typescript
+
+93
+00:06:08,000 --> 00:06:12,000
+compiler. So your TypeScript compiler looks at these settings
+
+94
+00:06:12,000 --> 00:06:16,000
+and based on these settings is going to compile your TypeScript code into JavaScript
+
+95
+00:06:16,000 --> 00:06:20,000
+that browsers can understand. Again, for the most part,
+
+96
+00:06:20,000 --> 00:06:24,000
+you don't have to change any of these here. Just be aware that in the future,
+
+97
+00:06:24,000 --> 00:06:28,000
+in a complex project, you need to change your TypeScript complier settings,
+
+98
+00:06:28,000 --> 00:06:32,000
+this is where you need to apply your changes. And finally,
+
+99
+00:06:32,000 --> 00:06:36,000
+we have tslint.json, which includes a number
+
+100
+00:06:36,000 --> 00:06:40,000
+of settings for ts links. In case you don't know, tslint
+
+101
+00:06:40,000 --> 00:06:44,000
+is a static analysis tool for TimeScript code. So
+
+102
+00:06:44,000 --> 00:06:48,000
+it checks your TypeScript code for readability, maintainability,
+
+103
+00:06:48,000 --> 00:06:52,000
+and functionality errors. So this is the basic structure of an Angular
+
+104
+00:06:52,000 --> 00:06:54,000
+project.
+
