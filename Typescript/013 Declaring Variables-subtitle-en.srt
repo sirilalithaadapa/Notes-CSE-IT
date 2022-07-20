@@ -1,0 +1,290 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, let's explore TypeScript by looking
+
+2
+00:00:04,000 --> 00:00:08,000
+at Variable Declarations. So in TypeScript,
+
+3
+00:00:08,000 --> 00:00:12,000
+there are two ways to declare a variable. We can use the var keyboard
+
+4
+00:00:12,000 --> 00:00:16,000
+which you have seen in JavaScript, like var number, reset it to 1.
+
+5
+00:00:16,000 --> 00:00:20,000
+Or, we can use the let keyword. So, let, count,
+
+6
+00:00:20,000 --> 00:00:24,000
+3, 2. Now, before I explain the difference, I
+
+7
+00:00:24,000 --> 00:00:28,000
+need to clarify that the let keyword is also being added to the JavaScript,
+
+8
+00:00:28,000 --> 00:00:32,000
+so JavaScript has a few different versions. We have
+
+9
+00:00:32,000 --> 00:00:36,000
+ES5, or ECMAScript 5, which is the version of JavaScript
+
+10
+00:00:36,000 --> 00:00:40,000
+supported by pretty much all browsers out there, it's been around for
+
+11
+00:00:40,000 --> 00:00:44,000
+a long time. Now we have ES6, which is a newer version,
+
+12
+00:00:44,000 --> 00:00:48,000
+and it was introduced in year 2015, and from that point
+
+13
+00:00:48,000 --> 00:00:52,000
+the ECMAScript team, which is the team extending JavaScript
+
+14
+00:00:52,000 --> 00:00:56,000
+decided to use the year number, instead of the version number.
+
+15
+00:00:56,000 --> 00:01:00,000
+So, we have ECMAScript 2015, 2016, and
+
+16
+00:01:00,000 --> 00:01:04,000
+2017. Now with ECMAScript 2015, which is basically
+
+17
+00:01:04,000 --> 00:01:08,000
+ES6, you also have this let keyword. But,
+
+18
+00:01:08,000 --> 00:01:12,000
+in case you are not familiar with it, let me explain how it works.
+
+19
+00:01:12,000 --> 00:01:16,000
+So, I'm going to define a function. Let's call it do
+
+20
+00:01:16,000 --> 00:01:20,000
+Something. It doesn't really matter. But here I'm going to define
+
+21
+00:01:20,000 --> 00:01:24,000
+a for block, so var we said i to 0,
+
+22
+00:01:24,000 --> 00:01:28,000
+and as long as i is less than five,
+
+23
+00:01:28,000 --> 00:01:32,000
+let's increment it, here we have a block and then log it on the console.
+
+24
+00:01:32,000 --> 00:01:36,000
+Now, finally at the end of this function, I'm going to
+
+25
+00:01:36,000 --> 00:01:40,000
+log this i one more time. But with the label
+
+26
+00:01:40,000 --> 00:01:44,000
+Finally.
+
+27
+00:01:44,000 --> 00:01:48,000
+Then I'm going to call this function here. So,
+
+28
+00:01:48,000 --> 00:01:52,000
+in the terminal I'm going to compile this file, main.ts, and
+
+29
+00:01:52,000 --> 00:01:56,000
+also at the same time, run it with node, main.ts,
+
+30
+00:01:56,000 --> 00:02:00,000
+Note that the value of i at the end
+
+31
+00:02:00,000 --> 00:02:04,000
+is 5. So this is the issue we have when declaring
+
+32
+00:02:04,000 --> 00:02:08,000
+a variable using the var keyboard. So we have declared i
+
+33
+00:02:08,000 --> 00:02:12,000
+here, inside this for block, but it's also meaningful
+
+34
+00:02:12,000 --> 00:02:16,000
+and available, outside the for block. Now if you have worked with languages
+
+35
+00:02:16,000 --> 00:02:20,000
+like C Sharp, or Java, you know that we don't have these concepts, and those languages.
+
+36
+00:02:20,000 --> 00:02:24,000
+In JavaScript, a variable declared with
+
+37
+00:02:24,000 --> 00:02:28,000
+a var keyboard, is the scope to the nearest function. So in this
+
+38
+00:02:28,000 --> 00:02:32,000
+case the nearest function is doSomething, so once we declare
+
+39
+00:02:32,000 --> 00:02:36,000
+i inside this for block, it's available anywhere in this
+
+40
+00:02:36,000 --> 00:02:40,000
+function. Now let's see what happens when we declare this variable using
+
+41
+00:02:40,000 --> 00:02:44,000
+the let keyboard. So, let.
+
+42
+00:02:44,000 --> 00:02:48,000
+Now look, we immediately got a red underline here which indicates
+
+43
+00:02:48,000 --> 00:02:52,000
+a compilation error. And this is one of the beauties of TypeScript.
+
+44
+00:02:52,000 --> 00:02:56,000
+When you are writing TypeScript code, you can catch these errors at compile time,
+
+45
+00:02:56,000 --> 00:03:00,000
+before you run your application, before you deploy it. Now this hover
+
+46
+00:03:00,000 --> 00:03:04,000
+or mouse here, so this is the error, can not find main, i.
+
+47
+00:03:04,000 --> 00:03:08,000
+So now i is scope to the nearest log.
+
+48
+00:03:08,000 --> 00:03:12,000
+instead of nearest function, and this is the proper way to declare
+
+49
+00:03:12,000 --> 00:03:16,000
+variables which prevents a lot of issues later down the road.
+
+50
+00:03:16,000 --> 00:03:20,000
+Now, I want to clarify something. I'm going to save this file,
+
+51
+00:03:20,000 --> 00:03:24,000
+back in the terminal, first I'm going to remove main.
+
+52
+00:03:24,000 --> 00:03:28,000
+js. Now, I'm going to recompile
+
+53
+00:03:28,000 --> 00:03:32,000
+our main.ts, okay, we got our error here, can not find
+
+54
+00:03:32,000 --> 00:03:36,000
+name 'i'. However, if you look at the files
+
+55
+00:03:36,000 --> 00:03:40,000
+in this folder, we do have main.js, so even though we have a
+
+56
+00:03:40,000 --> 00:03:44,000
+compilation error, the TypeScript compiler still generated main.
+
+57
+00:03:44,000 --> 00:03:48,000
+js. Let's have a look at the content of this file.
+
+58
+00:03:48,000 --> 00:03:52,000
+So this is the code that is generated. So
+
+59
+00:03:52,000 --> 00:03:56,000
+by default, TypeScript Compiler compiles our TypeScript code to
+
+60
+00:03:56,000 --> 00:04:00,000
+ES5, or ECMA Script 5, which is the older version of JavaScript
+
+61
+00:04:00,000 --> 00:04:04,000
+that is supported by all browsers out there. Now there, we don't have
+
+62
+00:04:04,000 --> 00:04:08,000
+the let keyboard. So, that's why our compile code now
+
+63
+00:04:08,000 --> 00:04:12,000
+uses the var keyboard, and this is perfectly valid JavaScript code.
+
+64
+00:04:12,000 --> 00:04:16,000
+So, I can go in the terminal, and simply
+
+65
+00:04:16,000 --> 00:04:20,000
+run this code and get the same output as before.
+
+66
+00:04:20,000 --> 00:04:24,000
+So, what I want to clarify here, is that TypeScript
+
+67
+00:04:24,000 --> 00:04:28,000
+Compiler reports these errors, but still generates
+
+68
+00:04:28,000 --> 00:04:32,000
+valid JavaScript code. So here's the takeaway for
+
+69
+00:04:32,000 --> 00:04:36,000
+this lecture: from now on, anywhere we want to declare a variable, we use
+
+70
+00:04:36,000 --> 00:04:40,000
+the let keyboard. Once again, this does not stop the compilation step,
+
+71
+00:04:40,000 --> 00:04:44,000
+but at least we can catch the issues earlier during the
+
+72
+00:04:44,000 --> 00:04:48,000
+compile time. Next, we're going to look at different types we have in TypeScript.
+
+
+

@@ -1,0 +1,174 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, so I've simplified the code from the last
+
+2
+00:00:04,000 --> 00:00:08,000
+lecture, I simply removed the method, getDistance, because we're not going
+
+3
+00:00:08,000 --> 00:00:12,000
+to use it later in this section. So here on the top would define a
+
+4
+00:00:12,000 --> 00:00:16,000
+point class, and then below that initialize a point object. Now this code
+
+5
+00:00:16,000 --> 00:00:20,000
+is a little bit verbose. Because we have three lines
+
+6
+00:00:20,000 --> 00:00:24,000
+to create a point object and put it in a valid state.
+
+7
+00:00:24,000 --> 00:00:28,000
+What if this point object had a few other properties that we had to initialize like
+
+8
+00:00:28,000 --> 00:00:32,000
+this. Maybe a few
+
+9
+00:00:32,000 --> 00:00:36,000
+more here. Is there a cleaner way? Absolutely.
+
+10
+00:00:36,000 --> 00:00:40,000
+So let me delete this first, alright, an object
+
+11
+00:00:40,000 --> 00:00:44,000
+oriented program languages, we have this concept called
+
+12
+00:00:44,000 --> 00:00:48,000
+Constructor. So every class can have a Constructor, which is basically
+
+13
+00:00:48,000 --> 00:00:52,000
+a method that is called when we create an instance of
+
+14
+00:00:52,000 --> 00:00:56,000
+that class. So, let me show you how it works. In a class,
+
+15
+00:00:56,000 --> 00:01:00,000
+I'm going to add a method, the name of this method is
+
+16
+00:01:00,000 --> 00:01:04,000
+Constructor. This is a reserved keyword in TypeScript.
+
+17
+00:01:04,000 --> 00:01:08,000
+Now this method can have parameters. So x
+
+18
+00:01:08,000 --> 00:01:12,000
+which is a number, and y, which is also a number.
+
+19
+00:01:12,000 --> 00:01:16,000
+And then here in this method we can initialize these fields.
+
+20
+00:01:16,000 --> 00:01:20,000
+So, what should we write here? This, dot,
+
+21
+00:01:20,000 --> 00:01:24,000
+x, we set it to this x argument that we get here.
+
+22
+00:01:24,000 --> 00:01:28,000
+And similarly, this, dot, y, we set it to y.
+
+23
+00:01:28,000 --> 00:01:32,000
+Now look, we got a compilation error here. Because when creating
+
+24
+00:01:32,000 --> 00:01:36,000
+a new point object, we need to supply these values.
+
+25
+00:01:36,000 --> 00:01:40,000
+Look at the error: supply parameters do not match any signature
+
+26
+00:01:40,000 --> 00:01:44,000
+of call target. So here, we need to supply the value
+
+27
+00:01:44,000 --> 00:01:48,000
+views for x and y, one and two, and with this we can simplify
+
+28
+00:01:48,000 --> 00:01:52,000
+this code, and get rid of these two extra lines.
+
+29
+00:01:52,000 --> 00:01:56,000
+Here's the end result. Now what if somewhere
+
+30
+00:01:56,000 --> 00:02:00,000
+else in our program we don't know the initial coordinate or point?
+
+31
+00:02:00,000 --> 00:02:04,000
+In other words, what if I want to create a point object
+
+32
+00:02:04,000 --> 00:02:08,000
+without setting these values, is that possible? Yes, absolutely.
+
+33
+00:02:08,000 --> 00:02:12,000
+But it's a little different from how you have seen that in
+
+34
+00:02:12,000 --> 00:02:16,000
+other languages like C Sharp and Java. In C Sharp we can
+
+35
+00:02:16,000 --> 00:02:20,000
+have multiple Constructors, in TypeScript we can't. So the solution
+
+36
+00:02:20,000 --> 00:02:24,000
+for this is to make these parameters optional. So here
+
+37
+00:02:24,000 --> 00:02:28,000
+after x, I add the question mark, and that
+
+38
+00:02:28,000 --> 00:02:32,000
+makes x optional. And similarly, y should
+
+39
+00:02:32,000 --> 00:02:36,000
+be optional as well. Because once you make a parameter optional
+
+40
+00:02:36,000 --> 00:02:40,000
+all the other parameters on the right side of that parameter should be optional also.
+
+41
+00:02:40,000 --> 00:02:44,000
+This is a rule by TypeScript and other program languages.
+
+42
+00:02:44,000 --> 00:02:48,000
+So now, look we don't have a compilation error, when creating a point
+
+43
+00:02:48,000 --> 00:02:52,000
+object without initial values.
+
+
+

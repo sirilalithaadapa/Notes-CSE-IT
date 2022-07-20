@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, now let's see how we can use custom
+
+2
+00:00:04,000 --> 00:00:08,000
+types in TypeScript. So, I'm going to start by declaring a function
+
+3
+00:00:08,000 --> 00:00:12,000
+like draw point. So this function takes
+
+4
+00:00:12,000 --> 00:00:16,000
+an x and a y, and simply draws it on
+
+5
+00:00:16,000 --> 00:00:20,000
+the screen. Now, we don't want to worry about the actual drawing algorithm,
+
+6
+00:00:20,000 --> 00:00:24,000
+we just want to focus on the signature of this function. Now this function
+
+7
+00:00:24,000 --> 00:00:28,000
+is not too bad, here we only have two parameters, but sometimes
+
+8
+00:00:28,000 --> 00:00:32,000
+when we're working with more complex concept, we may end up with a function
+
+9
+00:00:32,000 --> 00:00:36,000
+that has so many parameters, like this.
+
+10
+00:00:36,000 --> 00:00:40,000
+This is really, really bad and is something you should avoid at all times.
+
+11
+00:00:40,000 --> 00:00:44,000
+In those situations, it's very likely that a group of these parameters
+
+12
+00:00:44,000 --> 00:00:48,000
+maybe all of them, belong to a singular concept,
+
+13
+00:00:48,000 --> 00:00:52,000
+as an example think of a car. A car has so many different properties,
+
+14
+00:00:52,000 --> 00:00:56,000
+we don't want to pass all those properties to a function, like drive car.
+
+15
+00:00:56,000 --> 00:01:00,000
+Instead, you want to encapsulate them inside an object,
+
+16
+00:01:00,000 --> 00:01:04,000
+and only pass that one object here. So in this example,
+
+17
+00:01:04,000 --> 00:01:08,000
+instead of passing x and y here t's better to
+
+18
+00:01:08,000 --> 00:01:12,000
+pass a point object, and then we can call this function
+
+19
+00:01:12,000 --> 00:01:16,000
+like this, drawPoint, we can give it an
+
+20
+00:01:16,000 --> 00:01:20,000
+object with two properties, x and y.
+
+21
+00:01:20,000 --> 00:01:24,000
+So now our function has a cleaner syntax. However,
+
+22
+00:01:24,000 --> 00:01:28,000
+there is a problem with this implementation. Instead of the point object,
+
+23
+00:01:28,000 --> 00:01:32,000
+I can pass a person object that has a name property.
+
+24
+00:01:32,000 --> 00:01:36,000
+And no where here, we're getting a complier time error, but we know
+
+25
+00:01:36,000 --> 00:01:40,000
+that this code is going to break at run time, because the algorithm
+
+26
+00:01:40,000 --> 00:01:44,000
+are drawPoint function is expecting x and y properties.
+
+27
+00:01:44,000 --> 00:01:48,000
+So, what's the solution? Well, let me revert this back,
+
+28
+00:01:48,000 --> 00:01:52,000
+okay, we've got x and y. So there are two solutions,
+
+29
+00:01:52,000 --> 00:01:56,000
+to solve this problem. One way is to use what we call
+
+30
+00:01:56,000 --> 00:02:00,000
+in line annotation. So just like we can annotate this parameter,
+
+31
+00:02:00,000 --> 00:02:04,000
+with a type like number, we can annotate it with
+
+32
+00:02:04,000 --> 00:02:08,000
+a custom type, or custom object. So here we add
+
+33
+00:02:08,000 --> 00:02:12,000
+curly braces to indicate an object, this object
+
+34
+00:02:12,000 --> 00:02:16,000
+is going to have a property different than x which is a number, and also
+
+35
+00:02:16,000 --> 00:02:20,000
+another property called y, which is again, a number. So this is
+
+36
+00:02:20,000 --> 00:02:24,000
+what we call in line annotation. It works fine for
+
+37
+00:02:24,000 --> 00:02:28,000
+simple cases, but the problem with this, as you can see is
+
+38
+00:02:28,000 --> 00:02:32,000
+that this is a little bit verbose. Also, chances are
+
+39
+00:02:32,000 --> 00:02:36,000
+somewhere else might have another function that expects a point object.
+
+40
+00:02:36,000 --> 00:02:40,000
+We don't want to repeat this object literal in multiple places.
+
+41
+00:02:40,000 --> 00:02:44,000
+So in those cases, a better approach is to use an interface.
+
+42
+00:02:44,000 --> 00:02:48,000
+If you work with object oriented program languages like C Sharp and Java,
+
+43
+00:02:48,000 --> 00:02:52,000
+you know the concept of interfaces. We have the same concept in TypeScript.
+
+44
+00:02:52,000 --> 00:02:56,000
+And if you have never worked with interfaces, let me show you how they work.
+
+45
+00:02:56,000 --> 00:03:00,000
+So, on the top, I define an interface,
+
+46
+00:03:00,000 --> 00:03:04,000
+I'm going to call this point,
+
+47
+00:03:04,000 --> 00:03:08,000
+curly braces, then I add x as a number,
+
+48
+00:03:08,000 --> 00:03:12,000
+and y as a number.
+
+49
+00:03:12,000 --> 00:03:16,000
+So with this interface, I'm defining the shape of an object.
+
+50
+00:03:16,000 --> 00:03:20,000
+And then, I can simplify this declaration,
+
+51
+00:03:20,000 --> 00:03:24,000
+and set the type of this parameter to Point.
+
+52
+00:03:24,000 --> 00:03:28,000
+This is much cleaner, and we can also reuse this in multiple
+
+53
+00:03:28,000 --> 00:03:32,000
+places. Just one thing, note the naming convention
+
+54
+00:03:32,000 --> 00:03:36,000
+I used here. So because I'm introducing a custom type,
+
+55
+00:03:36,000 --> 00:03:40,000
+I've used Pascal naming convention. So the first
+
+56
+00:03:40,000 --> 00:03:44,000
+letter of every word in the name of the interface should be capitalized.
+
+57
+00:03:44,000 --> 00:03:48,000
+So here we have upper case P, other lower case p, okay?
+
+58
+00:03:48,000 --> 00:03:52,000
+So, when using interfaces, always use Pascal naming
+
+59
+00:03:52,000 --> 00:03:54,000
+convention.
+

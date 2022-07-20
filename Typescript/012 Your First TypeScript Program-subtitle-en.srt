@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:04,000
+In this lecture, I'm going to show you how to install
+
+2
+00:00:04,000 --> 00:00:08,000
+TypeScript, and write your first TypeScript program. So here,
+
+3
+00:00:08,000 --> 00:00:12,000
+in the terminal, we're not going to work with Angular in this section, we're going to purely
+
+4
+00:00:12,000 --> 00:00:16,000
+focus on TypeScript. So first we need to install TypeScript
+
+5
+00:00:16,000 --> 00:00:20,000
+globally on our machine. So, npm,
+
+6
+00:00:20,000 --> 00:00:24,000
+install -g, which stands for global, typescript.
+
+7
+00:00:24,000 --> 00:00:28,000
+And of course, if you're on Mac, you need to put sudo at the
+
+8
+00:00:28,000 --> 00:00:32,000
+front. Alright,
+
+9
+00:00:32,000 --> 00:00:36,000
+beautiful, so I've installed the latest version of TypeScript, which is currently
+
+10
+00:00:36,000 --> 00:00:40,000
+version 2.3.4. Now we can type
+
+11
+00:00:40,000 --> 00:00:44,000
+tsc, which stands for TypeScript Compiler, --,
+
+12
+00:00:44,000 --> 00:00:48,000
+version. Again, you can see that I'm running TypeScript,
+
+13
+00:00:48,000 --> 00:00:52,000
+2.3.4. Alright, now I'm going to create a new folder for
+
+14
+00:00:52,000 --> 00:00:56,000
+this section, so let's call ts-hello.
+
+15
+00:00:56,000 --> 00:01:00,000
+Let's go to this folder, now here I'm going to create
+
+16
+00:01:00,000 --> 00:01:04,000
+a new file, and open it with vs code. So, code
+
+17
+00:01:04,000 --> 00:01:08,000
+main.ts. So,
+
+18
+00:01:08,000 --> 00:01:12,000
+now I'm going to write some plain JavaScript code, and I want to show you that all this
+
+19
+00:01:12,000 --> 00:01:16,000
+JavaScript code is also valid TypeScript code, so first
+
+20
+00:01:16,000 --> 00:01:20,000
+I'm going to define a function, let's call this log,
+
+21
+00:01:20,000 --> 00:01:24,000
+that takes a message,
+
+22
+00:01:24,000 --> 00:01:28,000
+and here we simply log that message on the console,
+
+23
+00:01:28,000 --> 00:01:32,000
+like this.
+
+24
+00:01:32,000 --> 00:01:36,000
+Then I'm going to declare a global variable, let's call this
+
+25
+00:01:36,000 --> 00:01:40,000
+message, and set it to this string, Hello World.
+
+26
+00:01:40,000 --> 00:01:44,000
+And finally call our log function, message.
+
+27
+00:01:44,000 --> 00:01:48,000
+So this is just plain JavaScript code, right?
+
+28
+00:01:48,000 --> 00:01:52,000
+Save, back in the terminal, we need to Transpile
+
+29
+00:01:52,000 --> 00:01:56,000
+this TypeScript file into JavaScript, so
+
+30
+00:01:56,000 --> 00:02:00,000
+tsc, or TypeScript Compiler, main.ts.
+
+31
+00:02:00,000 --> 00:02:04,000
+Now, if you look at the files in this folder, look what we have
+
+32
+00:02:04,000 --> 00:02:08,000
+main.js, and main.ts. Now this Transpilation,
+
+33
+00:02:08,000 --> 00:02:12,000
+or compilation step, when you are building an Angular app, happens
+
+34
+00:02:12,000 --> 00:02:16,000
+under the hood, so you don't have to manually call the TypeScript,
+
+35
+00:02:16,000 --> 00:02:20,000
+compiler. In fact when you run your application using
+
+36
+00:02:20,000 --> 00:02:24,000
+ng serve, Angular CLI, calls TypeScript compiler under the hood,
+
+37
+00:02:24,000 --> 00:02:28,000
+to transpile all of our TypeScript code. Alright, now let's
+
+38
+00:02:28,000 --> 00:02:32,000
+open our main.js file. So code.main.js.
+
+39
+00:02:32,000 --> 00:02:36,000
+So it's exactly the same code that we wrote
+
+40
+00:02:36,000 --> 00:02:40,000
+but now it's in a JavaScript file. So all JavaScript code
+
+41
+00:02:40,000 --> 00:02:44,000
+is also valid TypeScript code. Now back in the terminal, I
+
+42
+00:02:44,000 --> 00:02:48,000
+can execute this code using node. So node, main.js
+
+43
+00:02:48,000 --> 00:02:52,000
+And we got the Hello World message on the console.
+
+44
+00:02:52,000 --> 00:02:56,000
+So for the next lecture, we're going to look at specific features of
+
+45
+00:02:56,000 --> 00:03:00,000
+TypeScript that we don't currently have in JavaScript.
+

@@ -1,0 +1,432 @@
+1
+00:00:02,200 --> 00:00:09,130
+Art so I've created a new file like that component that he has here I'm going to define a class called
+
+2
+00:00:09,220 --> 00:00:15,350
+like component and in order to use this outside this class I'm going to explore this.
+
+3
+00:00:15,880 --> 00:00:16,640
+OK.
+
+4
+00:00:16,750 --> 00:00:21,150
+Now I wanted to field what is the total number of likes so likes count.
+
+5
+00:00:21,370 --> 00:00:22,940
+And this is a number.
+
+6
+00:00:23,350 --> 00:00:28,220
+And the other is a field to determine if the Like button is selected or not.
+
+7
+00:00:28,270 --> 00:00:33,300
+So it is selected and this is a Lhuillier.
+
+8
+00:00:33,310 --> 00:00:39,190
+Now we want the consumer of this component to be able to set the initial values for these fields.
+
+9
+00:00:39,220 --> 00:00:47,560
+So here we need a constructor constructor that takes two parameters like count which is a number and
+
+10
+00:00:47,650 --> 00:00:52,770
+is select that which is a bullier.
+
+11
+00:00:52,770 --> 00:00:54,390
+Now here we need to write something like this.
+
+12
+00:00:54,430 --> 00:00:59,610
+Is that like count we set it to likes count but this is repetitive right.
+
+13
+00:00:59,650 --> 00:01:03,870
+So I would rather to prefix this parameters with public
+
+14
+00:01:07,040 --> 00:01:10,040
+and then delete these two fields here.
+
+15
+00:01:10,040 --> 00:01:10,840
+That's clear.
+
+16
+00:01:12,140 --> 00:01:19,950
+Next we need a method unclick so human need to check to see if this button is selected or not.
+
+17
+00:01:19,950 --> 00:01:29,120
+So if this is selected you want to decrease the number of legs so this that likes count minus minus
+
+18
+00:01:30,430 --> 00:01:34,780
+and then we need to set this that is selected to force that.
+
+19
+00:01:34,820 --> 00:01:41,560
+Otherwise if the bun is not selected we want to increase the number of lengths so this that looks count
+
+20
+00:01:41,590 --> 00:01:46,210
+plus plus and this that is selected to true.
+
+21
+00:01:46,630 --> 00:01:48,720
+So this is the most basic implementation.
+
+22
+00:01:48,780 --> 00:01:50,630
+What we can do better.
+
+23
+00:01:50,650 --> 00:01:57,340
+So instead of having this is selected set to false or set to true what we can do we take this out of
+
+24
+00:01:57,340 --> 00:01:58,450
+these blocks here.
+
+25
+00:01:59,730 --> 00:02:02,200
+And then at the end we simply toggle this field.
+
+26
+00:02:02,310 --> 00:02:04,240
+So this is selected.
+
+27
+00:02:04,260 --> 00:02:10,170
+We said it's not this that is Selecta that's cleaner.
+
+28
+00:02:10,170 --> 00:02:13,710
+Also we can rewrite this block like this.
+
+29
+00:02:15,420 --> 00:02:17,640
+So this dad likes count.
+
+30
+00:02:17,940 --> 00:02:20,610
+We check to see if it's selected is true.
+
+31
+00:02:20,610 --> 00:02:23,010
+So this is selective.
+
+32
+00:02:23,130 --> 00:02:30,000
+If that's true we want to increment like count by 1 otherwise we want to incremented by minus 1.
+
+33
+00:02:30,210 --> 00:02:37,380
+So we can rewrite it like this plus equal one here colon minus one.
+
+34
+00:02:37,470 --> 00:02:42,370
+So if is select that is true we're going to add 1 to let's count.
+
+35
+00:02:42,480 --> 00:02:47,910
+Otherwise we're going to add minus 1 to likes count which basically decreases the value of let's count
+
+36
+00:02:47,910 --> 00:02:48,990
+by 1.
+
+37
+00:02:49,050 --> 00:02:49,760
+OK.
+
+38
+00:02:50,130 --> 00:02:52,860
+Now look this is a much cleaner implementation.
+
+39
+00:02:52,860 --> 00:02:54,820
+With only two lines of code.
+
+40
+00:02:55,230 --> 00:03:00,400
+So let's go to maned TS here on the top you want to import our class.
+
+41
+00:03:00,460 --> 00:03:11,960
+So import like component from dot slash like component.
+
+42
+00:03:11,980 --> 00:03:14,670
+Now we need to create an instance of this class.
+
+43
+00:03:14,830 --> 00:03:23,610
+So let component equal new like component and here in the constructor we can pass the initial values.
+
+44
+00:03:23,610 --> 00:03:34,160
+So let's say like count 10 and this is selected then we call component that unclick and finally displayed
+
+45
+00:03:34,160 --> 00:03:35,670
+the result on the console.
+
+46
+00:03:35,750 --> 00:03:37,700
+So cancel that log.
+
+47
+00:03:37,700 --> 00:03:43,970
+Now here in typescript we can use back take and with this we can create a template string like this.
+
+48
+00:03:43,970 --> 00:03:51,920
+So like count we set this two dollar curly braces and inside curly braces we can add a parameter.
+
+49
+00:03:51,980 --> 00:03:56,120
+In this case component do not likes count.
+
+50
+00:03:56,120 --> 00:04:03,230
+So what we put here will be replaced by the value of the likes count field of our component that we
+
+51
+00:04:03,220 --> 00:04:05,790
+will at is selected.
+
+52
+00:04:06,030 --> 00:04:15,340
+Once again we add a parameter using dollar sign and curly braces so component dot is selected.
+
+53
+00:04:15,580 --> 00:04:23,770
+Now honest go to the terminal so tapster compiler start the Ts and then node main.
+
+54
+00:04:23,840 --> 00:04:30,150
+J.S. So likes count is 11 and is selected is false.
+
+55
+00:04:30,150 --> 00:04:37,670
+Looks like we have a bug here because back in Maine that as I said the total number of likes to 10 and
+
+56
+00:04:37,790 --> 00:04:39,510
+is selected to true.
+
+57
+00:04:39,570 --> 00:04:45,570
+So if the like 1 is selected and we click it again the number of likes should be decreased and is selected
+
+58
+00:04:45,580 --> 00:04:47,000
+should be false.
+
+59
+00:04:47,010 --> 00:04:50,830
+So let's go back to our life component OK.
+
+60
+00:04:50,840 --> 00:04:52,110
+Here's the mistake.
+
+61
+00:04:52,160 --> 00:04:59,350
+So if you select that is true you want to add minus 1 to let's count otherwise plus 1.
+
+62
+00:04:59,720 --> 00:05:00,360
+OK.
+
+63
+00:05:00,620 --> 00:05:07,350
+So back in the terminal one more time OK we got the right result.
+
+64
+00:05:07,360 --> 00:05:07,960
+Beautiful.
+
+65
+00:05:11,920 --> 00:05:18,370
+The problem is that before calling the unclick matter I can come here and type component that likes
+
+66
+00:05:18,370 --> 00:05:22,560
+count said this to let's say two in a real world situation.
+
+67
+00:05:22,570 --> 00:05:27,510
+This will never happen because let's say a post as initially 10 likes.
+
+68
+00:05:27,550 --> 00:05:31,170
+So when I click it the number of likes should be 11.
+
+69
+00:05:31,180 --> 00:05:37,180
+In other words the number of likes should only be changed if we click that like button it shouldn't
+
+70
+00:05:37,180 --> 00:05:38,130
+magically change.
+
+71
+00:05:38,140 --> 00:05:41,540
+Otherwise same is true for component.
+
+72
+00:05:41,610 --> 00:05:45,130
+Dot is selector again.
+
+73
+00:05:45,270 --> 00:05:52,050
+The value of this field should only be controlled when with click this like component or like man.
+
+74
+00:05:52,290 --> 00:05:55,880
+So this is where we need to implement a read only property.
+
+75
+00:05:55,950 --> 00:06:00,870
+So the consumer of this class can not change the value of these two fields.
+
+76
+00:06:00,990 --> 00:06:06,280
+These two fields their value should only be changed inside the unclick method.
+
+77
+00:06:06,280 --> 00:06:06,950
+All right.
+
+78
+00:06:06,970 --> 00:06:15,840
+So backing or like component first I'm going to change the name of these parameters to underline like
+
+79
+00:06:15,870 --> 00:06:21,930
+count and underline is Selecta.
+
+80
+00:06:22,240 --> 00:06:27,790
+I'm also going to change their access modifiers to private so we cannot set them from the outside.
+
+81
+00:06:30,080 --> 00:06:33,480
+And then we need to properties.
+
+82
+00:06:33,540 --> 00:06:36,840
+So get like count.
+
+83
+00:06:37,090 --> 00:06:39,360
+And here we return this.
+
+84
+00:06:39,490 --> 00:06:43,330
+Underline likes count one more property.
+
+85
+00:06:43,390 --> 00:06:47,340
+So get is selected.
+
+86
+00:06:47,500 --> 00:06:52,620
+And here we return this underline is selected with this implementation.
+
+87
+00:06:52,630 --> 00:06:59,380
+If we go back to main the TS We get a compilation error here because we cannot access these private
+
+88
+00:06:59,380 --> 00:07:01,570
+fields from the outside.
+
+89
+00:07:01,660 --> 00:07:08,800
+And also if we change these two their properties like lexical and again we get a compilation error because
+
+90
+00:07:08,980 --> 00:07:11,890
+this is a read only property.
+
+91
+00:07:12,020 --> 00:07:16,670
+Now where this implementation our component will always be in a valid state.
+
+92
+00:07:16,670 --> 00:07:22,530
+So finally let's change the name of this field to their properties so we can display them on the console.
+
+93
+00:07:24,970 --> 00:07:26,020
+All right.
+
+94
+00:07:26,020 --> 00:07:31,360
+Now back in the terminal when we compile these files look what happens.
+
+95
+00:07:32,470 --> 00:07:38,990
+We get this error accessors are only available when targeting ECMAScript 5 and higher.
+
+96
+00:07:39,010 --> 00:07:44,120
+So here we need to pass a switch to typescript compiler so it targets ECMAScript 5.
+
+97
+00:07:44,410 --> 00:07:57,920
+So TSC start to ts dash dash target and here we add yes 5 and then node maned that Julius OK.
+
+98
+00:07:58,060 --> 00:08:00,160
+Now the application is working beautifully.
+
+99
+00:08:00,160 --> 00:08:06,040
+I just want to clarify something before we finish this lecture even though we defined these two properties
+
+100
+00:08:06,040 --> 00:08:06,750
+here.
+
+101
+00:08:06,840 --> 00:08:12,760
+In a lot of angular applications we don't really need these and we quite often use fields because the
+
+102
+00:08:12,760 --> 00:08:18,280
+issue I showed you here about changing the value of these fields directly outside this class that issue
+
+103
+00:08:18,280 --> 00:08:24,520
+does not happen in English applications because in an English application we bind an element on the
+
+104
+00:08:24,520 --> 00:08:29,500
+view like you span a paragraph or something to a field in our component.
+
+105
+00:08:29,500 --> 00:08:33,380
+And with this the value of that field is displayed on the user interface.
+
+106
+00:08:33,610 --> 00:08:40,840
+So there is no code to directly modify that field modification only happens when the user clicks a button
+
+107
+00:08:40,930 --> 00:08:42,790
+or trigger some other action.
+
+108
+00:08:42,790 --> 00:08:46,390
+That raises a dummy that you're going to see that later in this course.
+

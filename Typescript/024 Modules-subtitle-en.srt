@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, I've
+
+2
+00:00:04,000 --> 00:00:08,000
+simplified the definition of the point class, I removed the Properties, so
+
+3
+00:00:08,000 --> 00:00:12,000
+we have a simple Constructor, and the draw method, and we are using this point
+
+4
+00:00:12,000 --> 00:00:16,000
+class below each definition. Now this is a very simple program with only
+
+5
+00:00:16,000 --> 00:00:20,000
+one file, but the real world application consists of
+
+6
+00:00:20,000 --> 00:00:24,000
+tens of hundreds of files. We don't want to write all the code in one file
+
+7
+00:00:24,000 --> 00:00:28,000
+in main.ts. So ideally, I want to move the definition
+
+8
+00:00:28,000 --> 00:00:32,000
+of this point class somewhere else, in a file like point.
+
+9
+00:00:32,000 --> 00:00:36,000
+ts. So here in this project I'm going to add a new file,
+
+10
+00:00:36,000 --> 00:00:40,000
+point.ts, now
+
+11
+00:00:40,000 --> 00:00:44,000
+back in main.ts, I'm going to select all this code,
+
+12
+00:00:44,000 --> 00:00:48,000
+cut it, and move it to point.ts.
+
+13
+00:00:48,000 --> 00:00:52,000
+Now, in TypeScript, we have this concept called
+
+14
+00:00:52,000 --> 00:00:56,000
+Modules. Now what a Module is requires a little more explanation
+
+15
+00:00:56,000 --> 00:01:00,000
+but for now, let me give you a simple, pragmatic definition.
+
+16
+00:01:00,000 --> 00:01:04,000
+In TypeScript, you can think of each file as a
+
+17
+00:01:04,000 --> 00:01:08,000
+So in this program we can say we ave two Modules
+
+18
+00:01:08,000 --> 00:01:12,000
+but this is not quite accurate, because these files are not Modules.
+
+19
+00:01:12,000 --> 00:01:16,000
+yet. So, in point.ts, we have
+
+20
+00:01:16,000 --> 00:01:20,000
+defined this class called point, but this is not accessible anywhere
+
+21
+00:01:20,000 --> 00:01:24,000
+outside this file. So this file defines it's own
+
+22
+00:01:24,000 --> 00:01:28,000
+scope. In order for us to use this class somewhere else
+
+23
+00:01:28,000 --> 00:01:32,000
+in our program, we need to export this from the outside.
+
+24
+00:01:32,000 --> 00:01:36,000
+So, we add the export keyword here, and now this is
+
+25
+00:01:36,000 --> 00:01:40,000
+visible outside this file. Now that we're exporting
+
+26
+00:01:40,000 --> 00:01:44,000
+something on top of this file, from TypeScript's point of view this file
+
+27
+00:01:44,000 --> 00:01:48,000
+is a module, now we need to go back to our main.ts
+
+28
+00:01:48,000 --> 00:01:52,000
+and import this class, so we can use it. So back in main
+
+29
+00:01:52,000 --> 00:01:56,000
+.ts, look we have a compilation error,
+
+30
+00:01:56,000 --> 00:02:00,000
+Cannot find name 'point', because we have not
+
+31
+00:02:00,000 --> 00:02:04,000
+imported this into main.ts. So on the top,
+
+32
+00:02:04,000 --> 00:02:08,000
+write import, in curly braces,
+
+33
+00:02:08,000 --> 00:02:12,000
+we add the name of the types we want to import, in this case, Point.
+
+34
+00:02:12,000 --> 00:02:16,000
+Now if there are multiple types we want to import, you separate
+
+35
+00:02:16,000 --> 00:02:20,000
+them using comma. Okay? So,
+
+36
+00:02:20,000 --> 00:02:24,000
+we import Point from, and here we put the name of
+
+37
+00:02:24,000 --> 00:02:28,000
+the Module in quotes. What is the name of the module?
+
+38
+00:02:28,000 --> 00:02:32,000
+It's the relative pass from this file.
+
+39
+00:02:32,000 --> 00:02:36,000
+So both these files are in the same folder, we can
+
+40
+00:02:36,000 --> 00:02:40,000
+use period, slash, which refers to the current folder,
+
+41
+00:02:40,000 --> 00:02:44,000
+and then, point is the name of our module, so it's not
+
+42
+00:02:44,000 --> 00:02:48,000
+point.ts, look, I got a compilation error.
+
+43
+00:02:48,000 --> 00:02:52,000
+So, the name of our Module is point. So we no longer have
+
+44
+00:02:52,000 --> 00:02:56,000
+a compilation error here, and we can create an instance of
+
+45
+00:02:56,000 --> 00:03:00,000
+this point class and use it. Now, there's a lot more to talk about when it comes
+
+46
+00:03:00,000 --> 00:03:04,000
+to Modularity in TypeScript, but that's all you need to know for now,
+
+47
+00:03:04,000 --> 00:03:08,000
+in order to start building applications with Angular. Because
+
+48
+00:03:08,000 --> 00:03:12,000
+in Angular framework we have a lot of types that are exported,
+
+49
+00:03:12,000 --> 00:03:16,000
+we need to import these into our TypeScript files and use them.
+
+50
+00:03:16,000 --> 00:03:20,000
+We're going to see that a lot in this program, the only difference is that
+
+51
+00:03:20,000 --> 00:03:24,000
+Angular modules are defined in a  different way so we don't add the relative
+
+52
+00:03:24,000 --> 00:03:28,000
+pass to these Module files, because these files are not really
+
+53
+00:03:28,000 --> 00:03:32,000
+part of our application. They are somewhere inside node
+
+54
+00:03:32,000 --> 00:03:36,000
+underline modules folder. So when it comes to importing types defined
+
+55
+00:03:36,000 --> 00:03:40,000
+in an Angular, we use the library name as the Module name.
+
+56
+00:03:40,000 --> 00:03:44,000
+For example, one of the libraries is @angular,
+
+57
+00:03:44,000 --> 00:03:48,000
+/core. Okay? So here is the lesson,
+
+58
+00:03:48,000 --> 00:03:52,000
+In TypeScript we divide our program into multiple files
+
+59
+00:03:52,000 --> 00:03:56,000
+in each file, we export one or more types,
+
+60
+00:03:56,000 --> 00:04:00,000
+these types can be classes, functions, simple
+
+61
+00:04:00,000 --> 00:04:04,000
+variables or objects, and whenever we need to use these types,
+
+62
+00:04:04,000 --> 00:04:08,000
+we need to import them first. When we have an import or export statement
+
+63
+00:04:08,000 --> 00:04:12,000
+on top of a file, that file is a Module from TypeScript's
+
+64
+00:04:12,000 --> 00:04:16,000
+point of view. In Angular, we also have the concept of Modules,
+
+65
+00:04:16,000 --> 00:04:20,000
+but Angular Modules are a little bit different, they're not about organization of
+
+66
+00:04:20,000 --> 00:04:24,000
+code in different files, they are about organization of your application
+
+67
+00:04:24,000 --> 00:04:28,000
+into smaller, functional areas. We're going to learn about
+
+68
+00:04:28,000 --> 00:04:31,000
+the Angular modules in the next section.
+

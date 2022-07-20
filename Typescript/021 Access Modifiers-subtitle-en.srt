@@ -1,0 +1,178 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, so here I've created a point object,
+
+2
+00:00:04,000 --> 00:00:08,000
+with an initial coordinate. Now what if in our program, you want to
+
+3
+00:00:08,000 --> 00:00:12,000
+have this rule such that when we initialize a point object we should
+
+4
+00:00:12,000 --> 00:00:16,000
+not be able to change the x or y values?
+
+5
+00:00:16,000 --> 00:00:20,000
+With this implementation, I can always come here and set
+
+6
+00:00:20,000 --> 00:00:24,000
+point.x to a different value. How can we avoid this?
+
+7
+00:00:24,000 --> 00:00:28,000
+Sometimes, we need this feature in our programs, because it will make them
+
+8
+00:00:28,000 --> 00:00:32,000
+more predictable. It reduces the chance for bugs. So,
+
+9
+00:00:32,000 --> 00:00:36,000
+how should we prevent the coordinate of this project to change after
+
+10
+00:00:36,000 --> 00:00:40,000
+it's initialized? Well, in object oriented languages we have
+
+11
+00:00:40,000 --> 00:00:44,000
+these concepts called Access Modifiers.
+
+12
+00:00:44,000 --> 00:00:48,000
+An Access Modifier, is basically a keyword we can apply to a member of a
+
+13
+00:00:48,000 --> 00:00:52,000
+class to control it's access from the outside.
+
+14
+00:00:52,000 --> 00:00:56,000
+So in TypeScript, we have three Access Modifiers, public, private,
+
+15
+00:00:56,000 --> 00:01:00,000
+and protected. Public and private are the most common, and
+
+16
+00:01:00,000 --> 00:01:04,000
+by default, all members are public. Let me show you what I mean.
+
+17
+00:01:04,000 --> 00:01:08,000
+So here, in our point class, we have three members, right?
+
+18
+00:01:08,000 --> 00:01:12,000
+We have two fields, and one method, so,
+
+19
+00:01:12,000 --> 00:01:16,000
+let me create a point object, and type point,
+
+20
+00:01:16,000 --> 00:01:20,000
+dot, look, these are the members of the class, and
+
+21
+00:01:20,000 --> 00:01:24,000
+because they are all public, we can access them here. And that's why we can see them
+
+22
+00:01:24,000 --> 00:01:28,000
+in the IntelliSense. However, I can go here,
+
+23
+00:01:28,000 --> 00:01:32,000
+and prefix this field with the private keyword.
+
+24
+00:01:32,000 --> 00:01:36,000
+Now, once we create this point
+
+25
+00:01:36,000 --> 00:01:40,000
+object, if I type point, dot, look
+
+26
+00:01:40,000 --> 00:01:44,000
+x is not in the list. It's not accessible, it's private.
+
+27
+00:01:44,000 --> 00:01:48,000
+So if you're trying to set point.x to three, we have a compilation error,
+
+28
+00:01:48,000 --> 00:01:52,000
+in TypeScript. It says property x is
+
+29
+00:01:52,000 --> 00:01:56,000
+private, and only accessible within class 'Point'.
+
+30
+00:01:56,000 --> 00:02:00,000
+Now with this technique, I can go here, and apply
+
+31
+00:02:00,000 --> 00:02:04,000
+the private keyword on the y field as well.
+
+32
+00:02:04,000 --> 00:02:08,000
+And now, once I initialize a point object,
+
+33
+00:02:08,000 --> 00:02:12,000
+I can no longer change it's coordinates, I can only
+
+34
+00:02:12,000 --> 00:02:16,000
+call the draw method, okay, so this is why we use access
+
+35
+00:02:16,000 --> 00:02:20,000
+modifiers, we control access to certain members of a class,
+
+36
+00:02:20,000 --> 00:02:24,000
+from the outside. We can apply these Access Modifiers on fields,
+
+37
+00:02:24,000 --> 00:02:28,000
+properties and methods. Now by default,
+
+38
+00:02:28,000 --> 00:02:32,000
+if you don't set an access modifier, it's assumed to be public.
+
+39
+00:02:32,000 --> 00:02:36,000
+So here, the draw method as you know is public, I can also
+
+40
+00:02:36,000 --> 00:02:40,000
+add the public keyboard here, but this is redundant, it's just making my
+
+41
+00:02:40,000 --> 00:02:44,000
+code noisy. So you don't really need to have this, it's better
+
+42
+00:02:44,000 --> 00:02:48,000
+to keep your code short and clean, and use the private access modifier
+
+43
+00:02:48,000 --> 00:02:52,000
+only when you need to. Next, I'm going to show you one of my favorite
+
+44
+00:02:52,000 --> 00:02:56,000
+features of TypeScript, around Access Modifiers.
+
+
+

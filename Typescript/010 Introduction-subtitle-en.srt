@@ -1,0 +1,36 @@
+1
+00:00:02,160 --> 00:00:07,080
+In order to build applications with angular you need to be comfortable with typescript.
+
+2
+00:00:07,380 --> 00:00:13,350
+So in this section I'm going to introduce you to the fundamentals of typescript an object oriented programming
+
+3
+00:00:13,350 --> 00:00:14,520
+principles.
+
+4
+00:00:14,520 --> 00:00:21,300
+So by the end of this section you will have a good understanding of type annotations Aro functions interfaces
+
+5
+00:00:21,630 --> 00:00:27,210
+classes instructors access modifiers properties and modules.
+
+6
+00:00:27,360 --> 00:00:32,700
+If you're familiar with this concept and know how to implement them in typescript feel free to skip
+
+7
+00:00:32,700 --> 00:00:34,950
+this section and move on to Engler.
+
+8
+00:00:35,040 --> 00:00:38,090
+Otherwise you really need to watch every lecture in the section.
+
+9
+00:00:38,340 --> 00:00:40,010
+So now let's get started.
+

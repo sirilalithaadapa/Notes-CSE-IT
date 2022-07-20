@@ -1,0 +1,106 @@
+1
+00:00:00,000 --> 00:00:04,000
+Another concept you need to know when using TypeScript
+
+2
+00:00:04,000 --> 00:00:08,000
+to build Angular applications, is the concept of Arrow
+
+3
+00:00:08,000 --> 00:00:12,000
+Functions. So in JavaScript, we can declare a function like this,
+
+4
+00:00:12,000 --> 00:00:16,000
+let log set this to a function,
+
+5
+00:00:16,000 --> 00:00:20,000
+this function takes a message object,
+
+6
+00:00:20,000 --> 00:00:24,000
+and simply logs it on the console, like this.
+
+7
+00:00:24,000 --> 00:00:28,000
+Now in TypeScript, there is a shorter way to define this
+
+8
+00:00:28,000 --> 00:00:32,000
+function. So, let's call the other one
+
+9
+00:00:32,000 --> 00:00:36,000
+doLog, now we don't need the function keyboard anymore,
+
+10
+00:00:36,000 --> 00:00:40,000
+we can simply add the parameters, in this case
+
+11
+00:00:40,000 --> 00:00:44,000
+message, then we add this arrow, and that's why
+
+12
+00:00:44,000 --> 00:00:48,000
+we call this an arrow function. And finally, the code block.
+
+13
+00:00:48,000 --> 00:00:52,000
+So, console.log, message.
+
+14
+00:00:52,000 --> 00:00:56,000
+Now if your function only has one line, we can even exclude
+
+15
+00:00:56,000 --> 00:01:00,000
+these curly braces, so we can make this code
+
+16
+00:01:00,000 --> 00:01:04,000
+a little bit shorter and cleaner like this.
+
+17
+00:01:04,000 --> 00:01:08,000
+If you have C Sharp you have seen this before, in C# we call this a lambda expression.
+
+18
+00:01:08,000 --> 00:01:12,000
+In TypeScript, we call it an arrow function, it's exactly the same thing.
+
+19
+00:01:12,000 --> 00:01:16,000
+Now, if you have one parameter here, you can even exclude the
+
+20
+00:01:16,000 --> 00:01:20,000
+parenthesis, but I personally don't like this because I think it makes the code
+
+21
+00:01:20,000 --> 00:01:24,000
+a little bit less readable, so I always like to put my parenthesis
+
+22
+00:01:24,000 --> 00:01:28,000
+here, to indicate to the reader of this code that these
+
+23
+00:01:28,000 --> 00:01:32,000
+are the parameters. Now what if you don't have any parameters? You just add
+
+24
+00:01:32,000 --> 00:01:36,000
+empty parenthesis, but of course here, you don't have the message.
+
+25
+00:01:36,000 --> 00:01:40,000
+So, if you have not seen this before, get used to it, it's a really
+
+26
+00:01:40,000 --> 00:01:44,000
+nice and clean way to define functions.
+
+
+

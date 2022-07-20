@@ -1,0 +1,250 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, so here's our class, now
+
+2
+00:00:04,000 --> 00:00:08,000
+let's declare a variable of this type. So let, point
+
+3
+00:00:08,000 --> 00:00:12,000
+the of type point. And then
+
+4
+00:00:12,000 --> 00:00:16,000
+we can type point, dot, look, we have this beautifully
+
+5
+00:00:16,000 --> 00:00:20,000
+IntelliSense, we have two methods, draw, and getDistance,
+
+6
+00:00:20,000 --> 00:00:24,000
+and two fields, x and y. Now in TypeScript
+
+7
+00:00:24,000 --> 00:00:28,000
+you also have a concept called property, which is different from
+
+8
+00:00:28,000 --> 00:00:32,000
+a field, but a lot of people use these terms interchangeably.
+
+9
+00:00:32,000 --> 00:00:36,000
+Later, in this section, we're going to learn the difference between fields and properties.
+
+10
+00:00:36,000 --> 00:00:40,000
+Now, if you want to call the draw method, simply call it like this.
+
+11
+00:00:40,000 --> 00:00:44,000
+So this draw method is now part of the concept of
+
+12
+00:00:44,000 --> 00:00:48,000
+the point. It's not a function hanging in the air, polluting the global
+
+13
+00:00:48,000 --> 00:00:52,000
+namespace. Now for this demo I'm going to add a simple
+
+14
+00:00:52,000 --> 00:00:56,000
+console.log here, and display the coordinates
+
+15
+00:00:56,000 --> 00:01:00,000
+of this point. So x, now here I want to
+
+16
+00:01:00,000 --> 00:01:04,000
+add the x field, but we can not use it like this. We
+
+17
+00:01:04,000 --> 00:01:08,000
+need to prefix it with this dot, so that refers to
+
+18
+00:01:08,000 --> 00:01:12,000
+this field in this class. And then I'm going to add y is
+
+19
+00:01:12,000 --> 00:01:16,000
+once again this.y.
+
+20
+00:01:16,000 --> 00:01:20,000
+Now let's compile and run this program and see what happens.
+
+21
+00:01:20,000 --> 00:01:24,000
+So tsc, what should we type here,
+
+22
+00:01:24,000 --> 00:01:28,000
+main.ts, and we can short cut,
+
+23
+00:01:28,000 --> 00:01:32,000
+by adding this pipe here, type node, and then
+
+24
+00:01:32,000 --> 00:01:36,000
+main.js. okay? We're going to run
+
+25
+00:01:36,000 --> 00:01:40,000
+time error. Can not read property draw of
+
+26
+00:01:40,000 --> 00:01:44,000
+undefined. So this is the problem, when we call
+
+27
+00:01:44,000 --> 00:01:48,000
+this draw method, this point object was undefined.
+
+28
+00:01:48,000 --> 00:01:52,000
+Because here, unlike the basic types we have in TypeScript,
+
+29
+00:01:52,000 --> 00:01:56,000
+like numbers, strings, booleans, we're dealing with a custom type.
+
+30
+00:01:56,000 --> 00:02:00,000
+When defining an object of a custom type, we need to
+
+31
+00:02:00,000 --> 00:02:04,000
+explicitly allocate memory to it, how do we do that?
+
+32
+00:02:04,000 --> 00:02:08,000
+Well, here where we declare the point object
+
+33
+00:02:08,000 --> 00:02:12,000
+point variable, we initialize it using the new
+
+34
+00:02:12,000 --> 00:02:16,000
+operator. So this object, is a new point.
+
+35
+00:02:16,000 --> 00:02:20,000
+And here we add parenthesis.
+
+36
+00:02:20,000 --> 00:02:24,000
+This is the syntax. Now you can see that we have repeated this point here,
+
+37
+00:02:24,000 --> 00:02:28,000
+twice so we can make this code a little bit cleaner,
+
+38
+00:02:28,000 --> 00:02:32,000
+by removing this type adaptation, because
+
+39
+00:02:32,000 --> 00:02:36,000
+TypeScript Compiler can infer from this assignment here,
+
+40
+00:02:36,000 --> 00:02:40,000
+that the type of this object is a point object, and
+
+41
+00:02:40,000 --> 00:02:44,000
+let's verify that, look, you're working with a point object.
+
+42
+00:02:44,000 --> 00:02:48,000
+Now, one more time, save, so back in the
+
+43
+00:02:48,000 --> 00:02:52,000
+terminal, TypeScript Compiler, main.ts,
+
+44
+00:02:52,000 --> 00:02:56,000
+then node main.js,
+
+45
+00:02:56,000 --> 00:03:00,000
+okay, we didn't get an error, but you can see these x and y fields,
+
+46
+00:03:00,000 --> 00:03:04,000
+don't have a value, because by default they are undefined.
+
+47
+00:03:04,000 --> 00:03:08,000
+So, we can get back here and set point.x
+
+48
+00:03:08,000 --> 00:03:12,000
+to let's say one, and point.y to two.
+
+49
+00:03:12,000 --> 00:03:16,000
+Now, back in the terminal, TypeScript Compiler
+
+50
+00:03:16,000 --> 00:03:20,000
+main.ts, actually made a mistake earlier,
+
+51
+00:03:20,000 --> 00:03:24,000
+of this type operator, we need to use double && on Mac,
+
+52
+00:03:24,000 --> 00:03:28,000
+I don't know the Windows equivalent, so with this, we can
+
+53
+00:03:28,000 --> 00:03:32,000
+combine multiple commands. So node, main.js.
+
+54
+00:03:32,000 --> 00:03:36,000
+Alright, beautiful. X is one,
+
+55
+00:03:36,000 --> 00:03:40,000
+and y is two. So this is how we use the classes that we define
+
+56
+00:03:40,000 --> 00:03:44,000
+in our programs. Now I want to highlight something here.
+
+57
+00:03:44,000 --> 00:03:48,000
+This point here is a class, but this point here is an object.
+
+58
+00:03:48,000 --> 00:03:52,000
+An object is an instance of a class.
+
+59
+00:03:52,000 --> 00:03:56,000
+As a metaphor, think of the concept of a human. A human can be a class,
+
+60
+00:03:56,000 --> 00:04:00,000
+but when we create instances of this class, like Jon, Bob,
+
+61
+00:04:00,000 --> 00:04:04,000
+Mary, these are all objects. So that's the difference between
+
+62
+00:04:04,000 --> 00:04:08,000
+a class and an object. Next, we're going to look at Constructors.
+
+
+

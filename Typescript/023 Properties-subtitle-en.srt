@@ -1,0 +1,320 @@
+1
+00:00:00,000 --> 00:00:04,000
+Alright, now this
+
+2
+00:00:04,000 --> 00:00:08,000
+implementation has a tiny problem. We can set the initial coordinate
+
+3
+00:00:08,000 --> 00:00:12,000
+of this point, and we can also draw it, but there is no way
+
+4
+00:00:12,000 --> 00:00:16,000
+for us to read the coordinate, so I can not access point
+
+5
+00:00:16,000 --> 00:00:20,000
+dot x here to display to the user. What's the work around?
+
+6
+00:00:20,000 --> 00:00:24,000
+Well, one simple solution is to define a method
+
+7
+00:00:24,000 --> 00:00:28,000
+like this. getX, and here
+
+8
+00:00:28,000 --> 00:00:32,000
+simply return this dot x. Because in
+
+9
+00:00:32,000 --> 00:00:36,000
+this class we do have access to all the private members
+
+10
+00:00:36,000 --> 00:00:40,000
+of this class, but we can not access them from the outside. Okay?
+
+11
+00:00:40,000 --> 00:00:44,000
+Now here, I can always call point dot
+
+12
+00:00:44,000 --> 00:00:48,000
+getX, to get the X value to display to the user
+
+13
+00:00:48,000 --> 00:00:52,000
+Now let's talk about another use case
+
+14
+00:00:52,000 --> 00:00:56,000
+Maybe we want to give the user the ability to set the initial coordinate here,
+
+15
+00:00:56,000 --> 00:01:00,000
+but we also want them to be able to change this coordinate later
+
+16
+00:01:00,000 --> 00:01:04,000
+only if they provide a value within the given range.
+
+17
+00:01:04,000 --> 00:01:08,000
+What do I mean by that? Let me show you. I'm going to define
+
+18
+00:01:08,000 --> 00:01:12,000
+another method here, setX,
+
+19
+00:01:12,000 --> 00:01:16,000
+Now this method is going to get a value, that's the new
+
+20
+00:01:16,000 --> 00:01:20,000
+value for the x field. Scroll down,
+
+21
+00:01:20,000 --> 00:01:24,000
+Now here, first we can do some basic validation. So, if
+
+22
+00:01:24,000 --> 00:01:28,000
+the value is less than zero, you want to throw an error,
+
+23
+00:01:28,000 --> 00:01:32,000
+throw new error. Value cannot be
+
+24
+00:01:32,000 --> 00:01:36,000
+less than zero.
+
+25
+00:01:36,000 --> 00:01:40,000
+Otherwise, you want to set this dot x to this new value.
+
+26
+00:01:40,000 --> 00:01:44,000
+Okay? Now with this implementation, we can
+
+27
+00:01:44,000 --> 00:01:48,000
+always change the value of the x field like this, point
+
+28
+00:01:48,000 --> 00:01:52,000
+dot set x, set it to a new value
+
+29
+00:01:52,000 --> 00:01:56,000
+Now if you have a use case like that in your application, you can use what we call
+
+30
+00:01:56,000 --> 00:02:00,000
+the property. So in TypeScript and
+
+31
+00:02:00,000 --> 00:02:04,000
+object oriented program languages, we have a concept called Property
+
+32
+00:02:04,000 --> 00:02:08,000
+which is exactly for this very use case. So,
+
+33
+00:02:08,000 --> 00:02:12,000
+Look at how I can define a property here. We start with
+
+34
+00:02:12,000 --> 00:02:16,000
+a keyword which is get or set, and then the name of the Property
+
+35
+00:02:16,000 --> 00:02:20,000
+which is in this case x, and then after that we're going to have parenthesis.
+
+36
+00:02:20,000 --> 00:02:24,000
+Just like in method, okay? Now similarly,
+
+37
+00:02:24,000 --> 00:02:28,000
+I'm going to change this to set, with a space so we have the set keyword
+
+38
+00:02:28,000 --> 00:02:32,000
+and here it's like we have a function, a method,
+
+39
+00:02:32,000 --> 00:02:36,000
+Now what is the difference? The difference is we can use the properties
+
+40
+00:02:36,000 --> 00:02:40,000
+like fields, so here, I can read x
+
+41
+00:02:40,000 --> 00:02:44,000
+like this, note the icon of x,
+
+42
+00:02:44,000 --> 00:02:48,000
+is the same icon we have for fields, it's not a method anymore.
+
+43
+00:02:48,000 --> 00:02:52,000
+So we can read x, and we can also
+
+44
+00:02:52,000 --> 00:02:56,000
+set it like this. Point dot x and set it to ten.
+
+45
+00:02:56,000 --> 00:03:00,000
+We don't have to call a method like this, it's a cleaner syntax.
+
+46
+00:03:00,000 --> 00:03:04,000
+Okay? So this is what properties are for.
+
+47
+00:03:04,000 --> 00:03:08,000
+If you have private fields, and you want to give maybe a read
+
+48
+00:03:08,000 --> 00:03:12,000
+only access to the outside, or you want to give the consumer of your classes
+
+49
+00:03:12,000 --> 00:03:16,000
+the ability to set the values, but you want to have some basic validation,
+
+50
+00:03:16,000 --> 00:03:20,000
+that's when you use a Property, now in this case, if I want to
+
+51
+00:03:20,000 --> 00:03:24,000
+give only the read only access to this underline field, I can simply
+
+52
+00:03:24,000 --> 00:03:28,000
+comment out a setter, so we
+
+53
+00:03:28,000 --> 00:03:32,000
+call this method a setter, and the other method a getter.
+
+54
+00:03:32,000 --> 00:03:36,000
+Okay? And now look at this compilation error. We can not change
+
+55
+00:03:36,000 --> 00:03:40,000
+the value of x. Now let's bring this back
+
+56
+00:03:40,000 --> 00:03:44,000
+one last thing before we finish this lecture. So here I have used a capital
+
+57
+00:03:44,000 --> 00:03:48,000
+x with the name of my x property. In JavaScript
+
+58
+00:03:48,000 --> 00:03:52,000
+and in TypeScript we use Camel Notation to name our fields.
+
+59
+00:03:52,000 --> 00:03:56,000
+So that's why earlier we defined this
+
+60
+00:03:56,000 --> 00:04:00,000
+field here using Camel Casing Notation. Camel Casing means
+
+61
+00:04:00,000 --> 00:04:04,000
+the first letter of the first word is lowercase, and the first letter of
+
+62
+00:04:04,000 --> 00:04:08,000
+every word after is uppercase. Now, what should we do to
+
+63
+00:04:08,000 --> 00:04:12,000
+use Camel Casing Notation for our properties? If I name
+
+64
+00:04:12,000 --> 00:04:16,000
+this the lower case x, it clashes with
+
+65
+00:04:16,000 --> 00:04:20,000
+the existing field, so let me revert this back,
+
+66
+00:04:20,000 --> 00:04:24,000
+a convention we use to solve this problem is to prefix
+
+67
+00:04:24,000 --> 00:04:28,000
+the name of the underlying field with an underline. So, let's rename
+
+68
+00:04:28,000 --> 00:04:32,000
+this using F2, and prefix it with an underline.
+
+69
+00:04:32,000 --> 00:04:36,000
+Okay? Now similarly, for the y parameter or the y
+
+70
+00:04:36,000 --> 00:04:40,000
+field, I'm also going to use underline y,
+
+71
+00:04:40,000 --> 00:04:44,000
+then we can rename this property from capital x, to lowercase x.
+
+72
+00:04:44,000 --> 00:04:48,000
+Once again, we press F2, lowercase x,
+
+73
+00:04:48,000 --> 00:04:52,000
+and note that both instances, both the getter and the
+
+74
+00:04:52,000 --> 00:04:56,000
+setter are updated. Now,
+
+75
+00:04:56,000 --> 00:05:00,000
+we can work with this x property exactly the same way
+
+76
+00:05:00,000 --> 00:05:04,000
+we use the x field. So here's the lesson, the property
+
+77
+00:05:04,000 --> 00:05:08,000
+looks like a field from the outside, but internally it's really
+
+78
+00:05:08,000 --> 00:05:12,000
+a method in the class. But more accurately, it's either
+
+79
+00:05:12,000 --> 00:05:16,000
+one method which is a getter or a setter, or a combination of a getter
+
+80
+00:05:16,000 --> 00:05:18,000
+and a setter.
+

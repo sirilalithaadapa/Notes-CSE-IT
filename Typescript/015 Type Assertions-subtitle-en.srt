@@ -1,0 +1,168 @@
+1
+00:00:00,000 --> 00:00:04,000
+In this lecture, I'm going to show you the
+
+2
+00:00:04,000 --> 00:00:08,000
+concept of Type Assertions in TypeScript, so
+
+3
+00:00:08,000 --> 00:00:12,000
+I'm going to start by declaring a variable like message, and setting
+
+4
+00:00:12,000 --> 00:00:16,000
+it to a string. Now here we can type message, dot,
+
+5
+00:00:16,000 --> 00:00:20,000
+and look, we get this beautiful IntelliSense and
+
+6
+00:00:20,000 --> 00:00:24,000
+in this tool tip, we can see all the things we can do with a string. So,
+
+7
+00:00:24,000 --> 00:00:28,000
+all these items with these purple items are functions, for example we have,
+
+8
+00:00:28,000 --> 00:00:32,000
+this function called endsWith, we can call
+
+9
+00:00:32,000 --> 00:00:36,000
+this, and see if this message ends, let's say, with c.
+
+10
+00:00:36,000 --> 00:00:40,000
+And this returns a Boolean. So we can store the result
+
+11
+00:00:40,000 --> 00:00:44,000
+in another variable like endsWith
+
+12
+00:00:44,000 --> 00:00:48,000
+C. However, sometimes
+
+13
+00:00:48,000 --> 00:00:52,000
+TypeScript may be a little bit confused about the type of a variable.
+
+14
+00:00:52,000 --> 00:00:56,000
+For example, I'm going to remove this initialization here,
+
+15
+00:00:56,000 --> 00:01:00,000
+and initial it this variable on the second line.
+
+16
+00:01:00,000 --> 00:01:04,000
+abc. Now look at this type of this message variable.
+
+17
+00:01:04,000 --> 00:01:08,000
+It's any, because by default when we don't set a value, it's
+
+18
+00:01:08,000 --> 00:01:12,000
+type is any. Now the problem here, is
+
+19
+00:01:12,000 --> 00:01:16,000
+if I delete this and type period, look
+
+20
+00:01:16,000 --> 00:01:20,000
+we don't get that IntelliSense anymore, because endsWith, is something
+
+21
+00:01:20,000 --> 00:01:24,000
+that we can do with a  string, not with an object of type any.
+
+22
+00:01:24,000 --> 00:01:28,000
+So, what should we do? In this case, we need to explicitly
+
+23
+00:01:28,000 --> 00:01:32,000
+tell TypeScript Compiler that this message variable is actually a
+
+24
+00:01:32,000 --> 00:01:36,000
+string. And this is what we call Type Assertions.
+
+25
+00:01:36,000 --> 00:01:40,000
+Now, how do we do Type Assertions? There are two ways. One way
+
+26
+00:01:40,000 --> 00:01:44,000
+is to prefix this variable with angle brackets and
+
+27
+00:01:44,000 --> 00:01:48,000
+here we put the type, like string, now we need to enclose
+
+28
+00:01:48,000 --> 00:01:52,000
+both these parts in parenthesis, like
+
+29
+00:01:52,000 --> 00:01:56,000
+this. Then, if you press period,
+
+30
+00:01:56,000 --> 00:02:00,000
+we get our beautiful IntelliSense with all the functions or methods available
+
+31
+00:02:00,000 --> 00:02:04,000
+on string objects. Now, there is also another way
+
+32
+00:02:04,000 --> 00:02:08,000
+to do a Type Assertion, so,
+
+33
+00:02:08,000 --> 00:02:12,000
+let's change the name of this variable to alternativeway,
+
+34
+00:02:12,000 --> 00:02:16,000
+we still have angle brackets, you use message
+
+35
+00:02:16,000 --> 00:02:20,000
+as string. They're exactly the same,
+
+36
+00:02:20,000 --> 00:02:24,000
+now approach issues is purely your personal preference, but the first approach
+
+37
+00:02:24,000 --> 00:02:28,000
+is what you see more in a lot of tutorials and code bases out
+
+38
+00:02:28,000 --> 00:02:32,000
+there. Now, I just want to clarify something here, this Type Asserion
+
+39
+00:02:32,000 --> 00:02:36,000
+does not change this type of variable at run time.
+
+40
+00:02:36,000 --> 00:02:40,000
+In fact, it's not going to restructure that object in memory. It's purely
+
+41
+00:02:40,000 --> 00:02:44,000
+a way to tell TypeScript Compiler about the type of a variable.
+
+42
+00:02:44,000 --> 00:02:47,000
+So, we can access the IntelliSense.
+

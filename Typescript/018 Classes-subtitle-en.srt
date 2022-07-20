@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:04,000
+So in the last lecture, we used
+
+2
+00:00:04,000 --> 00:00:08,000
+an interface to define the shape of a point object.
+
+3
+00:00:08,000 --> 00:00:12,000
+But there is a problem with this implementation. In object oriented
+
+4
+00:00:12,000 --> 00:00:16,000
+program languages, we have this concept called Cohesion.
+
+5
+00:00:16,000 --> 00:00:20,000
+Which basically means, things that are related, should be part of one
+
+6
+00:00:20,000 --> 00:00:24,000
+unit. They should go together. This is what we call Cohesion.
+
+7
+00:00:24,000 --> 00:00:28,000
+Now, back to this example. On the top we had used an interface
+
+8
+00:00:28,000 --> 00:00:32,000
+to define the shape of a point object, and below that, we have a
+
+9
+00:00:32,000 --> 00:00:36,000
+stand alone function. And this is where we have violated the
+
+10
+00:00:36,000 --> 00:00:40,000
+Cohesion principle. The concept of drawing a point
+
+11
+00:00:40,000 --> 00:00:44,000
+is highly related to the structure of a point. It should not be
+
+12
+00:00:44,000 --> 00:00:48,000
+a separate function. Now, if you're going to build a utility library for working with
+
+13
+00:00:48,000 --> 00:00:52,000
+points, chances are, you're going to create another function,
+
+14
+00:00:52,000 --> 00:00:56,000
+like getDistance, that calculates the distance
+
+15
+00:00:56,000 --> 00:01:00,000
+between two points. So point A, in type point,
+
+16
+00:01:00,000 --> 00:01:04,000
+and pointB of type Point. And this goes to
+
+17
+00:01:04,000 --> 00:01:08,000
+code block. Again, we have violated the Cohesion
+
+18
+00:01:08,000 --> 00:01:12,000
+principle, we have two functions hanging in the air,
+
+19
+00:01:12,000 --> 00:01:16,000
+separate from the point object. Since these concepts are highly
+
+20
+00:01:16,000 --> 00:01:20,000
+related, they should be part of one unit. In object oriented
+
+21
+00:01:20,000 --> 00:01:24,000
+languages, we call that unit a class. A class
+
+22
+00:01:24,000 --> 00:01:28,000
+groups properties and functions that are highly
+
+23
+00:01:28,000 --> 00:01:32,000
+related. Now, in this implementation, unfortunately
+
+24
+00:01:32,000 --> 00:01:36,000
+we can not move these two functions inside our interface.
+
+25
+00:01:36,000 --> 00:01:40,000
+Because interfaces are purely for declarations.
+
+26
+00:01:40,000 --> 00:01:44,000
+They can not include an implementation. In other words,
+
+27
+00:01:44,000 --> 00:01:48,000
+we can not have an algorithm for calculating the distance
+
+28
+00:01:48,000 --> 00:01:52,000
+between two points or drawing a point inside this interface.
+
+29
+00:01:52,000 --> 00:01:56,000
+What we can do instead, is to add
+
+30
+00:01:56,000 --> 00:02:00,000
+a function here, a function declaration,
+
+31
+00:02:00,000 --> 00:02:04,000
+so we're going to have a draw function that takes no parameters
+
+32
+00:02:04,000 --> 00:02:08,000
+and returns void, which means
+
+33
+00:02:08,000 --> 00:02:12,000
+it doesn't return anything. Now you may be asking, why don't we have
+
+34
+00:02:12,000 --> 00:02:16,000
+this point parameter here? Because of all these members
+
+35
+00:02:16,000 --> 00:02:20,000
+x, y, and draw are part of one unit, we don't need to
+
+36
+00:02:20,000 --> 00:02:24,000
+pass x and y as parameters that draw function.
+
+37
+00:02:24,000 --> 00:02:28,000
+This function can directly access these properties x and y
+
+38
+00:02:28,000 --> 00:02:32,000
+in the same unit. So, we don't need this parameter here. Now in
+
+39
+00:02:32,000 --> 00:02:36,000
+interfaces as I said we can not have implementation, we can only have
+
+40
+00:02:36,000 --> 00:02:40,000
+signature of a function, so with this interface, we are telling TypeScript
+
+41
+00:02:40,000 --> 00:02:44,000
+Compiler, that our point objects should have two properties, x and y,
+
+42
+00:02:44,000 --> 00:02:48,000
+and a function called draw. The implementation of that is
+
+43
+00:02:48,000 --> 00:02:52,000
+somewhere else. So what should we do now to apply the Cohesion
+
+44
+00:02:52,000 --> 00:02:56,000
+principle here? We need to use a class instead of an interface.
+
+45
+00:02:56,000 --> 00:03:00,000
+So, on the top, I'm going to change the type to class
+
+46
+00:03:00,000 --> 00:03:04,000
+and here I' going to replace this comma with a semicolon,
+
+47
+00:03:04,000 --> 00:03:08,000
+so our point class has three members, the first two
+
+48
+00:03:08,000 --> 00:03:12,000
+members are what you call fields that we use for storing data.
+
+49
+00:03:12,000 --> 00:03:16,000
+And the third member is a function, now here in this class we can
+
+50
+00:03:16,000 --> 00:03:20,000
+have the actual implementation of this draw function.
+
+51
+00:03:20,000 --> 00:03:24,000
+So, we can simply define it like this. Draw,
+
+52
+00:03:24,000 --> 00:03:28,000
+and then add all that logic in drawing a point.
+
+53
+00:03:28,000 --> 00:03:32,000
+Now similarly, we can have another function get
+
+54
+00:03:32,000 --> 00:03:36,000
+Distance, that returns the distance between this point and
+
+55
+00:03:36,000 --> 00:03:40,000
+another point, like this.
+
+56
+00:03:40,000 --> 00:03:44,000
+Again, all that logic will end up here. Now, with this restructuring,
+
+57
+00:03:44,000 --> 00:03:48,000
+we can see that everything about the point is in one unit
+
+58
+00:03:48,000 --> 00:03:52,000
+and one class. So we have the coordinate which includes x and y,
+
+59
+00:03:52,000 --> 00:03:56,000
+and two functions, draw and getDistance. Now,
+
+60
+00:03:56,000 --> 00:04:00,000
+in object oriented program terms, we refer to these members as
+
+61
+00:04:00,000 --> 00:04:04,000
+fields, and to these functions as methods. So when a function
+
+62
+00:04:04,000 --> 00:04:08,000
+is part of a class, we call it a method. Alright, now with this new
+
+63
+00:04:08,000 --> 00:04:12,000
+implementation, we don't want these two functions hanging in the air.
+
+64
+00:04:12,000 --> 00:04:16,000
+So, delete. This is a much better
+
+65
+00:04:16,000 --> 00:04:20,000
+structure. Also, we're not going to call drawPoint like this anymore.
+
+66
+00:04:20,000 --> 00:04:24,000
+So here's our point class, in the next
+
+67
+00:04:24,000 --> 00:04:28,000
+lecture, I'm going to show you how to create an object of this type and call
+
+68
+00:04:28,000 --> 00:04:31,000
+the drawMethod.
+

@@ -1,0 +1,344 @@
+1
+00:00:00,000 --> 00:00:04,000
+In this lecture, I'm going to show you different types
+
+2
+00:00:04,000 --> 00:00:08,000
+we have in TypeScript. So, let me start
+
+3
+00:00:08,000 --> 00:00:12,000
+by declaring a variable, called count, and set it to 5.
+
+4
+00:00:12,000 --> 00:00:16,000
+Now, if I set this to let's say a
+
+5
+00:00:16,000 --> 00:00:20,000
+character or a string like 'a', note that I immediately get a
+
+6
+00:00:20,000 --> 00:00:24,000
+compilation error here, telling me that this 'a' string, or 'a' character,
+
+7
+00:00:24,000 --> 00:00:28,000
+is not assignable to type number. Now, we can perfectly
+
+8
+00:00:28,000 --> 00:00:32,000
+do this in JavaScript, because in JavaScript we can change
+
+9
+00:00:32,000 --> 00:00:36,000
+the type of variables on the fly, but in TypeScript, we get a compilation
+
+10
+00:00:36,000 --> 00:00:40,000
+error. Now, once again, I want to clarify that we can perfectly compile
+
+11
+00:00:40,000 --> 00:00:44,000
+this, using TypeScript Compiler and we will get valid JavaScript
+
+12
+00:00:44,000 --> 00:00:48,000
+code. So, if I go to terminal and type TypeScript
+
+13
+00:00:48,000 --> 00:00:52,000
+Compiler, main.ts, now look, this is our
+
+14
+00:00:52,000 --> 00:00:56,000
+main.js, so we have this count variable, and we change it's value.
+
+15
+00:00:56,000 --> 00:01:00,000
+We can perfectly execute this, no problem. However
+
+16
+00:01:00,000 --> 00:01:04,000
+code like this is very likely that it's going to break at some point in
+
+17
+00:01:04,000 --> 00:01:08,000
+the future, because chances are we're going to use this count variable
+
+18
+00:01:08,000 --> 00:01:12,000
+inside a for block, so our program is going to break at run time.
+
+19
+00:01:12,000 --> 00:01:16,000
+We don't want this to happen, right? That's one of the reasons it's better to
+
+20
+00:01:16,000 --> 00:01:20,000
+write the same code in TypeScript so at least we can get a warning
+
+21
+00:01:20,000 --> 00:01:24,000
+during the compilation step. Now, if you hover your mouse
+
+22
+00:01:24,000 --> 00:01:28,000
+over this count variable, look at the tool tip.
+
+23
+00:01:28,000 --> 00:01:32,000
+You can see a colon and number after this count.
+
+24
+00:01:32,000 --> 00:01:36,000
+So this indicates the type of count variable in our program.
+
+25
+00:01:36,000 --> 00:01:40,000
+So here, TypeScript Compiler inferred that the type of this variable
+
+26
+00:01:40,000 --> 00:01:44,000
+should be a number, because we set it to number 5. Now what
+
+27
+00:01:44,000 --> 00:01:48,000
+if I declare a variable without initializing it? Let's look at
+
+28
+00:01:48,000 --> 00:01:52,000
+this type. It's type is now any,
+
+29
+00:01:52,000 --> 00:01:56,000
+and this exactly like the variables that we declare in JavaScript. So we can
+
+30
+00:01:56,000 --> 00:02:00,000
+set a to 1, and then I can change the value to true and
+
+31
+00:02:00,000 --> 00:02:04,000
+set it to a string, even TypeScript doesn't complain about this.
+
+32
+00:02:04,000 --> 00:02:08,000
+So, what's the solution? If you don't know the value of a variable ahead of
+
+33
+00:02:08,000 --> 00:02:12,000
+time, that's when we use type annotations. So here,
+
+34
+00:02:12,000 --> 00:02:16,000
+we add colon, and after that we set the type of this variable.
+
+35
+00:02:16,000 --> 00:02:20,000
+Like, number. And then look, on the third and
+
+36
+00:02:20,000 --> 00:02:24,000
+fourth lines, we got compilation errors. Now in TypeScript
+
+37
+00:02:24,000 --> 00:02:28,000
+we have a few different types. So we have number, which can include
+
+38
+00:02:28,000 --> 00:02:32,000
+any integer or floating point numbers, we have
+
+39
+00:02:32,000 --> 00:02:36,000
+boolean's, which can be true or false,
+
+40
+00:02:36,000 --> 00:02:40,000
+we have strings, we have any that you saw
+
+41
+00:02:40,000 --> 00:02:44,000
+earlier, we have arrays, so let's say we want
+
+42
+00:02:44,000 --> 00:02:48,000
+to declare an array of numbers. You would use number,
+
+43
+00:02:48,000 --> 00:02:52,000
+in square brackets. Now, we can optionally
+
+44
+00:02:52,000 --> 00:02:56,000
+initialize this to an array like this. Or, we can
+
+45
+00:02:56,000 --> 00:03:00,000
+declare in any array, and with this
+
+46
+00:03:00,000 --> 00:03:04,000
+we can set this to an array with these values. One,
+
+47
+00:03:04,000 --> 00:03:08,000
+true, 'a', and false. Of course,
+
+48
+00:03:08,000 --> 00:03:12,000
+it's not a good practice, we want to avoid this, but I'm telling you what it possible with TypeScript.
+
+49
+00:03:12,000 --> 00:03:16,000
+Now we also have another type that I absolutely
+
+50
+00:03:16,000 --> 00:03:20,000
+love, and that's enum, so let's say you're working with a group
+
+51
+00:03:20,000 --> 00:03:24,000
+of related constants, like colors, so, in plain
+
+52
+00:03:24,000 --> 00:03:28,000
+and old, or vanilla JavaScript, we would define constant
+
+53
+00:03:28,000 --> 00:03:32,000
+colors like this, so color red, we can set this to zero.
+
+54
+00:03:32,000 --> 00:03:36,000
+Constant, ColorGreen, we set this to one,
+
+55
+00:03:36,000 --> 00:03:40,000
+constant, ColorBlue, set it to two.
+
+56
+00:03:40,000 --> 00:03:44,000
+Now, this is a little bit verbose. In a lot of object oriented languages, we have
+
+57
+00:03:44,000 --> 00:03:48,000
+this concept called enum, so we can put all these related
+
+58
+00:03:48,000 --> 00:03:52,000
+constants in a container. So in TypeScript, we can
+
+59
+00:03:52,000 --> 00:03:56,000
+can declare an enum like this, enum, all lower case
+
+60
+00:03:56,000 --> 00:04:00,000
+we give it a name like Color, now curly braces,
+
+61
+00:04:00,000 --> 00:04:04,000
+and here we set the values. So red, green,
+
+62
+00:04:04,000 --> 00:04:08,000
+and blue. Then, we can declare a variable,
+
+63
+00:04:08,000 --> 00:04:12,000
+like background color, and set it to color
+
+64
+00:04:12,000 --> 00:04:16,000
+dot, now look we have IntelliSense here.
+
+65
+00:04:16,000 --> 00:04:20,000
+So this tool tip you see here, allows us to complete this code without
+
+66
+00:04:20,000 --> 00:04:24,000
+remembering all the details. Now this is one of the things I love about TypeScript.
+
+67
+00:04:24,000 --> 00:04:28,000
+So, let's set the background color to Color.Red.
+
+68
+00:04:28,000 --> 00:04:32,000
+Now in terms of the values, the first element
+
+69
+00:04:32,000 --> 00:04:36,000
+here, automatically gets the value of zero, and
+
+70
+00:04:36,000 --> 00:04:40,000
+each subsequent element gets an incremented value.
+
+71
+00:04:40,000 --> 00:04:44,000
+So we don't have to explicitly set these. But as a best practice,
+
+72
+00:04:44,000 --> 00:04:48,000
+it's better to do so, because chances are some time in the future
+
+73
+00:04:48,000 --> 00:04:52,000
+someone may come here and add a new color here like purple, and then purple
+
+74
+00:04:52,000 --> 00:04:56,000
+would automatically become 2, and the value of blue would change to
+
+75
+00:04:56,000 --> 00:05:00,000
+3. So this may break parts of our application. So,
+
+76
+00:05:00,000 --> 00:05:04,000
+let me revert this by explicitly setting the values
+
+77
+00:05:04,000 --> 00:05:08,000
+If somebody adds a new color here like purple,
+
+78
+00:05:08,000 --> 00:05:12,000
+then it will not change the value of blue. Now let me show you
+
+79
+00:05:12,000 --> 00:05:16,000
+something. Let's compile this code and see how we get enum
+
+80
+00:05:16,000 --> 00:05:20,000
+in JavaScript. So, TypeScript Compiler,
+
+81
+00:05:20,000 --> 00:05:24,000
+main.ts.
+
+82
+00:05:24,000 --> 00:05:28,000
+Look at this piece of code here. This is how we can implement
+
+83
+00:05:28,000 --> 00:05:32,000
+the concept of enums in JavaScript. You can see it's very complicated.
+
+84
+00:05:32,000 --> 00:05:36,000
+Now, compare this with how we declare an enum
+
+85
+00:05:36,000 --> 00:05:40,000
+here. It's much cleaner. So the more you work with TypeScript,
+
+86
+00:05:40,000 --> 00:05:43,000
+the more you're going to love this language.
+
