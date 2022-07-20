@@ -1,0 +1,256 @@
+1
+00:00:02,160 --> 00:00:04,960
+All right let's quickly review what we have done so far.
+
+2
+00:00:04,990 --> 00:00:07,420
+So we created this course is component here.
+
+3
+00:00:07,630 --> 00:00:09,750
+Then we registered as an app module.
+
+4
+00:00:09,820 --> 00:00:19,210
+So you're app module we did our component inside the declarations array and then finally use this component
+
+5
+00:00:19,480 --> 00:00:21,640
+in the template for app component.
+
+6
+00:00:21,640 --> 00:00:28,140
+So let's quickly review after complaining that it's DMO you added this Course's element here three steps.
+
+7
+00:00:28,150 --> 00:00:29,230
+OK.
+
+8
+00:00:29,440 --> 00:00:31,540
+Now there are two problems with this opera.
+
+9
+00:00:31,930 --> 00:00:35,680
+The first problem is that this approach is a little bit tedious.
+
+10
+00:00:35,680 --> 00:00:37,820
+There are so many steps.
+
+11
+00:00:37,870 --> 00:00:43,780
+So first we had to create this typescript class and we had to import this component decorator on the
+
+12
+00:00:43,780 --> 00:00:47,980
+top and we had to apply it on this task of class.
+
+13
+00:00:48,010 --> 00:00:50,170
+There is so much boilerplate code here.
+
+14
+00:00:50,320 --> 00:00:56,000
+Now the second issue is that if you forget the second step or application is going to break.
+
+15
+00:00:56,080 --> 00:00:57,780
+Let me show you what happens.
+
+16
+00:00:58,240 --> 00:01:02,310
+So let's go to Aptos module.
+
+17
+00:01:02,340 --> 00:01:04,650
+I'm going to delete this line here.
+
+18
+00:01:07,740 --> 00:01:08,880
+Now let's see what happens.
+
+19
+00:01:10,500 --> 00:01:13,380
+Like in the browser We got a blank page.
+
+20
+00:01:13,420 --> 00:01:17,680
+So now we need to look at the console tab of chrome developer tools.
+
+21
+00:01:17,680 --> 00:01:25,090
+So right click anywhere on the page and specked so you can see we have two arrows here you can see the
+
+22
+00:01:25,090 --> 00:01:30,100
+details of these errors in the console tab.
+
+23
+00:01:30,130 --> 00:01:31,130
+So here's the error.
+
+24
+00:01:31,520 --> 00:01:34,720
+Coursers is not in known element.
+
+25
+00:01:34,720 --> 00:01:40,150
+So if you don't register a component in a module Angerer doesn't know about it and it doesn't know what
+
+26
+00:01:40,150 --> 00:01:44,770
+to do with this Course's element because this is not a native HDMI element.
+
+27
+00:01:44,800 --> 00:01:50,880
+So now let me show you a quicker and more reliable way to create an angle on a component.
+
+28
+00:01:51,120 --> 00:01:55,010
+We need to go back to the terminal but look our terminal is always busy.
+
+29
+00:01:55,090 --> 00:02:01,540
+It's serving the application so we either have to open a new terminal window or we can actually open
+
+30
+00:02:01,540 --> 00:02:03,760
+a terminal window inside.
+
+31
+00:02:03,920 --> 00:02:12,130
+SCOTT So back here if you press control and back tick which is the character before the number one on
+
+32
+00:02:12,130 --> 00:02:18,800
+your keyboard look we have a terminal window here and this is much easier to access and going back and
+
+33
+00:02:18,800 --> 00:02:21,080
+forth between different windows.
+
+34
+00:02:21,080 --> 00:02:24,890
+So here we can use angular Seelye to generate a component.
+
+35
+00:02:24,950 --> 00:02:31,850
+So just like how we generated an application with Engy new we can also generate a component with this
+
+36
+00:02:31,850 --> 00:02:33,020
+N-G.
+
+37
+00:02:33,170 --> 00:02:41,090
+So the syntax is like this in the space G which is short for generate and see which is short for component
+
+38
+00:02:42,210 --> 00:02:43,580
+and then the name of the component.
+
+39
+00:02:43,710 --> 00:02:46,500
+Let's say we want to create a component called course.
+
+40
+00:02:46,590 --> 00:02:56,370
+So of course because what happened and I created a directory called course and inside this directory
+
+41
+00:02:56,400 --> 00:02:58,230
+added four fires.
+
+42
+00:02:58,280 --> 00:03:06,030
+S.c.s this file for storing style sheets for a component an HMO file for storing the template a spec
+
+43
+00:03:06,030 --> 00:03:09,320
+file which is for writing unit tests for that component.
+
+44
+00:03:09,420 --> 00:03:13,920
+And finally a typescript file which is the actual component itself.
+
+45
+00:03:13,920 --> 00:03:21,160
+Now what is interesting here is that it also updated apt at module and registered this new component.
+
+46
+00:03:21,360 --> 00:03:22,230
+Let's have a look.
+
+47
+00:03:22,230 --> 00:03:27,880
+So we can close the terminal window using the same shortcut which is control and back take now we can
+
+48
+00:03:27,880 --> 00:03:34,950
+open the files panel using command and be on Mac or control B on Windows OK.
+
+49
+00:03:35,260 --> 00:03:35,580
+Look at.
+
+50
+00:03:35,580 --> 00:03:38,360
+After module.
+
+51
+00:03:38,420 --> 00:03:40,400
+So look inside the declarations array.
+
+52
+00:03:40,400 --> 00:03:42,810
+Now we have of course component.
+
+53
+00:03:42,890 --> 00:03:49,490
+So this way we don't have to remember to come back here and register our new components before we move
+
+54
+00:03:49,490 --> 00:03:49,700
+on.
+
+55
+00:03:49,700 --> 00:03:59,050
+Let me just quickly add our of course is a component that I removed earlier R.K. now in the files panel
+
+56
+00:03:59,890 --> 00:04:05,570
+this is the folder for our new component so this will or we have this for us.
+
+57
+00:04:05,570 --> 00:04:08,490
+Now let's take a look at the typescript class.
+
+58
+00:04:08,580 --> 00:04:12,660
+It has all the boilerplate code that we wrote earlier plus a little bit more.
+
+59
+00:04:12,780 --> 00:04:18,300
+So here we are importing the component decorator and honest which is an interface we're going to look
+
+60
+00:04:18,300 --> 00:04:23,300
+at this later and of course we have this component decorator applied to our typescript class.
+
+61
+00:04:23,340 --> 00:04:31,110
+We have a selector we have the u r L r r a template file as well as a u r l or a stylesheet file so
+
+62
+00:04:31,140 --> 00:04:33,430
+anger Seelye saves us a lot of time.
+
+63
+00:04:34,250 --> 00:04:39,660
+Now as we go through this course I'll show you how we can use this tool to generate other building blocks
+
+64
+00:04:39,660 --> 00:04:40,790
+for your applications.
+

@@ -1,0 +1,244 @@
+1
+00:00:03,500 --> 00:00:05,640
+Right now we have the list of course is here.
+
+2
+00:00:05,930 --> 00:00:10,890
+But in a real world application most of the time we get these courses from the server.
+
+3
+00:00:10,970 --> 00:00:12,630
+So it's sort of hard coding them here.
+
+4
+00:00:12,680 --> 00:00:16,720
+We need to call in HTP and point to get the list of courses.
+
+5
+00:00:16,740 --> 00:00:18,260
+Now here we have two options.
+
+6
+00:00:19,500 --> 00:00:26,120
+One is to add the logic for calling an HTP service here in this component.
+
+7
+00:00:26,430 --> 00:00:28,910
+But there are a couple of problems with this approach.
+
+8
+00:00:28,920 --> 00:00:35,490
+The first problem is that this logic is going to tightly coupled this component to that HTP endpoint
+
+9
+00:00:36,420 --> 00:00:40,110
+in the future when you want to write unit tests for this class.
+
+10
+00:00:40,110 --> 00:00:47,430
+We don't want to be dependent upon a live HTP endpoint because this is going to make it harder to execute
+
+11
+00:00:47,640 --> 00:00:49,220
+those unit tests.
+
+12
+00:00:49,290 --> 00:00:54,010
+So we want to create a fake implementation of an age type service.
+
+13
+00:00:54,030 --> 00:00:58,880
+So this is the first issue with writing this logic inside this class inside this component.
+
+14
+00:00:58,890 --> 00:01:03,150
+It's going to tightly coupled this component to that age and point.
+
+15
+00:01:03,150 --> 00:01:08,880
+The second issue is that maybe somewhere else in the application we're going to have another page where
+
+16
+00:01:08,880 --> 00:01:10,410
+we display the list of courses.
+
+17
+00:01:10,410 --> 00:01:15,880
+Maybe it's part of a dashboard maybe somewhere for an admin with this implementation.
+
+18
+00:01:15,900 --> 00:01:21,540
+We have to repeat this logic the logic for consuming that is the type of service in multiple places
+
+19
+00:01:21,840 --> 00:01:23,090
+and that's not good.
+
+20
+00:01:23,520 --> 00:01:29,610
+And finally the third issue with this implementation is that the components should not include any logic
+
+21
+00:01:30,000 --> 00:01:32,380
+other than the presentation logic.
+
+22
+00:01:32,430 --> 00:01:34,590
+What is the logic behind this view.
+
+23
+00:01:34,710 --> 00:01:39,780
+What should happen when we clicked upon when we select an item from a dropdown list and so on.
+
+24
+00:01:39,960 --> 00:01:45,270
+Details of how courses are retrieved should be delegated somewhere else in our application.
+
+25
+00:01:45,570 --> 00:01:48,260
+So where should we implement that logic in angular.
+
+26
+00:01:48,270 --> 00:01:50,190
+We use services for that.
+
+27
+00:01:50,190 --> 00:01:53,640
+So are we going to define a separate class which we call a service.
+
+28
+00:01:53,910 --> 00:02:00,480
+And there will at this logic forgetting the list of courses from an HDTV service then we can reuse this
+
+29
+00:02:00,480 --> 00:02:02,540
+class in multiple places.
+
+30
+00:02:02,550 --> 00:02:06,340
+So let me show you how to do that hearing the app folder.
+
+31
+00:02:06,340 --> 00:02:09,410
+I'm going to add in your file.
+
+32
+00:02:09,490 --> 00:02:19,210
+Now look at the naming convention coursers dot service TS So the name of our service is courses and
+
+33
+00:02:19,210 --> 00:02:22,660
+by convention we have the word service in the file name.
+
+34
+00:02:22,720 --> 00:02:29,040
+And finally that TS When creating a component we use coursers those component ts.
+
+35
+00:02:29,380 --> 00:02:31,390
+So not the difference.
+
+36
+00:02:31,470 --> 00:02:41,200
+Now here once again we want to export a plain type strip class so export class coursers service.
+
+37
+00:02:41,210 --> 00:02:47,090
+So once again by convention we add the word service as a suffix and the class name.
+
+38
+00:02:47,100 --> 00:02:53,970
+Now when creating components we decorate this class with the component decorator remember component
+
+39
+00:02:54,780 --> 00:03:01,050
+but in Angola we don't have a decorator for services so a service is essentially a plain typescript
+
+40
+00:03:01,050 --> 00:03:01,840
+class.
+
+41
+00:03:02,130 --> 00:03:07,450
+So delete now here we want to add a method for getting the list of courses.
+
+42
+00:03:07,450 --> 00:03:10,670
+Get courses.
+
+43
+00:03:10,770 --> 00:03:16,590
+For now we don't want to get distracted with the complexity of consuming and HTP service.
+
+44
+00:03:16,740 --> 00:03:22,440
+So let's just return the same array that we had in our component and later I will show you how to consume
+
+45
+00:03:22,440 --> 00:03:24,210
+an HDTV service.
+
+46
+00:03:24,210 --> 00:03:26,280
+So back in our component
+
+47
+00:03:29,030 --> 00:03:30,950
+I'm going to select this right here.
+
+48
+00:03:30,980 --> 00:03:38,520
+Got back into service and simply return it from the Smethurst.
+
+49
+00:03:38,550 --> 00:03:44,160
+Now imagine here in this method that we have that logic for consuming and the type of service with this
+
+50
+00:03:44,160 --> 00:03:46,640
+implementation we can reuse this class.
+
+51
+00:03:46,650 --> 00:03:50,650
+We can reuse this logic in multiple places in our application.
+
+52
+00:03:51,210 --> 00:03:57,540
+And also this will separate or decouple our component from this logic.
+
+53
+00:03:57,540 --> 00:04:04,280
+So back in our component here we're not going to have any logic for consuming an extra service.
+
+54
+00:04:04,550 --> 00:04:11,860
+And this allows us to uniters this class without dependency upon that HTP endpoint.
+
+55
+00:04:11,870 --> 00:04:17,360
+So while unit testing in this class we can provide a fake implementation of that service if that's too
+
+56
+00:04:17,360 --> 00:04:18,050
+complicated.
+
+57
+00:04:18,050 --> 00:04:19,250
+Don't worry about it.
+
+58
+00:04:19,250 --> 00:04:21,320
+Unit testing is something for the future.
+
+59
+00:04:21,650 --> 00:04:25,790
+OK now we have a service we need to use the service in our component.
+
+60
+00:04:25,790 --> 00:04:26,440
+How.
+
+61
+00:04:26,570 --> 00:04:28,100
+That's the topic for the next lecture.
+

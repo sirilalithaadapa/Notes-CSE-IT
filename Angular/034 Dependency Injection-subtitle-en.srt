@@ -1,0 +1,380 @@
+1
+00:00:03,060 --> 00:00:07,130
+Okay now we have a service to get the list of courses from the server.
+
+2
+00:00:07,320 --> 00:00:10,660
+We need to use this service and this course is component.
+
+3
+00:00:10,680 --> 00:00:19,290
+So first we need to add a constructor here constructor because a constructor is where we initialize
+
+4
+00:00:19,290 --> 00:00:20,660
+an object.
+
+5
+00:00:20,670 --> 00:00:26,180
+So here we need to create an instance of our course of service something like this.
+
+6
+00:00:27,060 --> 00:00:33,350
+Let service be new courses service.
+
+7
+00:00:33,480 --> 00:00:36,090
+Once again I'm using the auto import plug in.
+
+8
+00:00:36,150 --> 00:00:42,270
+So when I press enter it automatically adds the import statement here on the top.
+
+9
+00:00:42,600 --> 00:00:49,670
+So import course the service from current folder coursers dot service.
+
+10
+00:00:49,700 --> 00:00:53,510
+All right now back in the constructor.
+
+11
+00:00:53,660 --> 00:00:58,550
+So we have a service and then we can initialize this course is field like this.
+
+12
+00:00:58,550 --> 00:01:05,250
+This of course this we said to service that get coursers.
+
+13
+00:01:05,480 --> 00:01:07,520
+Let's test the application and make sure everything works.
+
+14
+00:01:07,520 --> 00:01:12,060
+Up to this point save Ok we get the same list.
+
+15
+00:01:12,100 --> 00:01:13,830
+Beautiful.
+
+16
+00:01:13,960 --> 00:01:16,990
+However there is a problem with its implementation.
+
+17
+00:01:17,440 --> 00:01:24,370
+The first problem is that by using this new operator here we have tightly coupled this course this component
+
+18
+00:01:24,670 --> 00:01:26,600
+to the course of service.
+
+19
+00:01:26,620 --> 00:01:32,470
+So this is exactly like the problem we had earlier if we implemented the logic for consuming and the
+
+20
+00:01:32,520 --> 00:01:37,750
+tipis service inside this component we wouldn't be able to unit test this class.
+
+21
+00:01:37,870 --> 00:01:43,240
+Now we put this logic in a different class of course of service but because we're directly creating
+
+22
+00:01:43,240 --> 00:01:49,000
+an instance of this class here we're still tightly coupled to that implementation.
+
+23
+00:01:49,000 --> 00:01:55,900
+The other issue here is that if in the future we decide to add a parameter to the constructor of course
+
+24
+00:01:55,900 --> 00:02:01,870
+or service we have to come back here and anywhere else in our application where we have used this course
+
+25
+00:02:01,870 --> 00:02:06,180
+of service and add a new argument like one.
+
+26
+00:02:06,220 --> 00:02:11,890
+So any time we change the constructor of the service we end up with multiple changes in our application
+
+27
+00:02:11,890 --> 00:02:12,610
+code.
+
+28
+00:02:12,610 --> 00:02:14,260
+So this is very fragile.
+
+29
+00:02:14,260 --> 00:02:15,240
+So what should we do.
+
+30
+00:02:15,460 --> 00:02:21,670
+Well instead of we creating an instance of the course of service we can ask Engler to do that for us
+
+31
+00:02:22,450 --> 00:02:25,070
+so we can delete this line here.
+
+32
+00:02:25,900 --> 00:02:32,580
+And add a parameter in the constructor call it service off type courses.
+
+33
+00:02:33,960 --> 00:02:41,320
+So Chris with this when anger is going to create an instance or a component it looks at this constructor
+
+34
+00:02:41,640 --> 00:02:44,610
+it is that this constructor has a dependency.
+
+35
+00:02:44,710 --> 00:02:48,670
+This dependency is of type courses service.
+
+36
+00:02:48,670 --> 00:02:54,940
+So first it creates an instance of the course of service and then passes that to the constructor.
+
+37
+00:02:54,940 --> 00:03:01,540
+Now with this implementation if you change the constructor of course a service and add a new parameter.
+
+38
+00:03:01,630 --> 00:03:08,380
+We don't have to modify 100 places in our code to reflect the change angular will automatically instantiate
+
+39
+00:03:08,620 --> 00:03:10,940
+a new course or service object.
+
+40
+00:03:11,760 --> 00:03:17,370
+The second benefit of this implementation is that when we are going to unit test this course is a component
+
+41
+00:03:17,640 --> 00:03:21,770
+instead of supplying an actual course of service to this constructor.
+
+42
+00:03:21,840 --> 00:03:28,800
+We can create a fake implementation of this service that doesn't use that HTP service on the backend.
+
+43
+00:03:28,800 --> 00:03:34,430
+In other words we have decoupled our course component from courses service.
+
+44
+00:03:34,440 --> 00:03:35,550
+So here's the lesson.
+
+45
+00:03:35,850 --> 00:03:44,180
+When you use the new operator like this inside a class you have tightly coupled your class to that implementation.
+
+46
+00:03:44,380 --> 00:03:50,590
+You cannot change this at runtime but when you add that dependency as a parameter of a constructor you
+
+47
+00:03:50,590 --> 00:03:53,950
+have decoupled the class from that dependency.
+
+48
+00:03:53,950 --> 00:03:55,540
+Now we're not done yet.
+
+49
+00:03:55,870 --> 00:04:02,990
+We need to construct angular to create an instance of course a service and pass it to our coarsest component.
+
+50
+00:04:03,040 --> 00:04:06,650
+This concept is called dependency injection.
+
+51
+00:04:06,820 --> 00:04:13,670
+So we should instruct Engler to inject the dependences of this component into its constructor.
+
+52
+00:04:13,670 --> 00:04:14,470
+Simple as that.
+
+53
+00:04:14,550 --> 00:04:16,330
+That's dependency injection.
+
+54
+00:04:16,330 --> 00:04:22,780
+A lot of people think dependency injection is so complicated but it's really a $25 term for a five cent
+
+55
+00:04:22,780 --> 00:04:23,680
+concept.
+
+56
+00:04:23,860 --> 00:04:30,470
+So Dependency Injection means injecting or providing the dependencies on class into its constructor.
+
+57
+00:04:30,510 --> 00:04:35,170
+Now angular as a dependency injection framework built into it.
+
+58
+00:04:35,170 --> 00:04:40,650
+So when it's going to create an instance of a component it can inject that dependencies.
+
+59
+00:04:40,690 --> 00:04:46,990
+But in order for that to work we need to register these dependencies somewhere in our model.
+
+60
+00:04:47,020 --> 00:04:49,870
+So let's see if that changes.
+
+61
+00:04:49,960 --> 00:04:52,980
+Now we need to go to our app module.
+
+62
+00:04:53,060 --> 00:04:56,520
+So here is apt on module okay.
+
+63
+00:04:56,530 --> 00:04:59,160
+Look at this engine module decorator.
+
+64
+00:04:59,440 --> 00:05:06,060
+Here we have a property called providers which is set to an empty array in this array.
+
+65
+00:05:06,130 --> 00:05:12,850
+We need to register all the dependencies that components in this module are dependent upon for example
+
+66
+00:05:12,880 --> 00:05:16,970
+our courses component is dependent upon of course the service.
+
+67
+00:05:17,020 --> 00:05:21,650
+So we need to register course a service as a provider in this module.
+
+68
+00:05:21,760 --> 00:05:22,120
+So
+
+69
+00:05:25,610 --> 00:05:32,550
+here I'm going at courses service if you forget the step dependency injection is not going to work.
+
+70
+00:05:32,570 --> 00:05:33,940
+Let me show you what happens.
+
+71
+00:05:34,040 --> 00:05:36,230
+So I'm going to comment out this line.
+
+72
+00:05:36,630 --> 00:05:40,800
+Save the browser get a blank page.
+
+73
+00:05:40,810 --> 00:05:42,320
+So that means something is wrong.
+
+74
+00:05:42,550 --> 00:05:50,040
+Let's open up chrome developer tools which shift command and I on Mac or shift control eye on Windows.
+
+75
+00:05:50,180 --> 00:05:51,000
+Look at this error.
+
+76
+00:05:51,120 --> 00:05:57,390
+No provider for course a service this is an error that you might see quite often when building angular
+
+77
+00:05:57,390 --> 00:05:58,130
+apps.
+
+78
+00:05:58,260 --> 00:06:05,520
+So the error is telling us that we have not registered course a service as a provider in our module.
+
+79
+00:06:05,520 --> 00:06:12,620
+So backing up module I'm going to have this course of service here save can the browser and we have
+
+80
+00:06:12,630 --> 00:06:13,780
+the list of courses.
+
+81
+00:06:14,000 --> 00:06:16,580
+Now one more thing before we finish this lecture.
+
+82
+00:06:16,580 --> 00:06:23,330
+When you register a dependency as a provider in a module Engler will create a single instance of that
+
+83
+00:06:23,330 --> 00:06:25,720
+class or that entire module.
+
+84
+00:06:26,060 --> 00:06:32,570
+So imagine in this module we have 100 components and 50 of these components need the course of service
+
+85
+00:06:33,310 --> 00:06:39,170
+in the memory we're going to have only a single instance of course a service and anger will pass the
+
+86
+00:06:39,170 --> 00:06:40,380
+same instance.
+
+87
+00:06:40,470 --> 00:06:41,980
+All of its components.
+
+88
+00:06:42,110 --> 00:06:44,840
+This is what we call the singleton pattern.
+
+89
+00:06:44,870 --> 00:06:48,630
+So a single instance of a given object exists in the memory.
+
+90
+00:06:48,950 --> 00:06:55,310
+So a quick round up backing or a component we added course courses service as a prompter and the constructor.
+
+91
+00:06:55,340 --> 00:07:02,610
+Or in other words as a dependency of this class and then registered this as a provider in our app module
+
+92
+00:07:03,060 --> 00:07:05,450
+with this implementation.
+
+93
+00:07:05,550 --> 00:07:11,010
+When anger is going to create an instance of this component first it will instantiate its dependencies
+
+94
+00:07:11,550 --> 00:07:15,770
+and then it will inject those dependencies into the constructor of this class.
+
+95
+00:07:15,870 --> 00:07:18,980
+And this is what we call dependency injection.
+

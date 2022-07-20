@@ -1,0 +1,16 @@
+1
+00:00:01,380 --> 00:00:06,880
+In this section we're going to look at the fundamentals of building applications with anger.
+
+2
+00:00:07,020 --> 00:00:12,510
+By the end of the section you will have a basic understanding of angular building blocks such as components
+
+3
+00:00:12,940 --> 00:00:15,710
+templates directives and services.
+
+4
+00:00:15,930 --> 00:00:17,100
+So now start Starla.
+

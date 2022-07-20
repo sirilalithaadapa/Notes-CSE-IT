@@ -1,0 +1,124 @@
+1
+00:00:02,140 --> 00:00:09,870
+So earlier I told you that a component encapsulates the data the logic and the HMO markup for a view.
+
+2
+00:00:09,880 --> 00:00:17,810
+So in this example in our courses component we have HMO markup but we don't have any data or any logic.
+
+3
+00:00:17,980 --> 00:00:20,770
+So let's extend this example and take it to the next level.
+
+4
+00:00:21,620 --> 00:00:29,090
+I want to define a field in this class to hold the title of this page so title I'm going to set this
+
+5
+00:00:29,090 --> 00:00:32,430
+to List Of course this.
+
+6
+00:00:32,550 --> 00:00:40,380
+Now I want to display this title in our template dynamically so I'm going to remove this hardcoded label
+
+7
+00:00:40,380 --> 00:00:42,120
+here it angular.
+
+8
+00:00:42,120 --> 00:00:49,350
+We have this special syntax double curly braces and we use this to render something in our template
+
+9
+00:00:49,680 --> 00:00:51,000
+dynamically.
+
+10
+00:00:51,000 --> 00:00:53,410
+So here I can put this title field.
+
+11
+00:00:53,580 --> 00:00:59,580
+This expression will be evaluated at runtime and the value of this title field will be placed in our
+
+12
+00:00:59,580 --> 00:01:00,550
+dorm.
+
+13
+00:01:00,570 --> 00:01:06,150
+Now if the value of the title field changes at some point in the future angular will automatically update
+
+14
+00:01:06,150 --> 00:01:07,040
+the DOM.
+
+15
+00:01:07,080 --> 00:01:09,470
+This is one of the beauties of Ingela framework.
+
+16
+00:01:09,720 --> 00:01:12,660
+So here we have this concept of data binding.
+
+17
+00:01:12,840 --> 00:01:18,450
+So we're binding our view to have filled in this component whenever the value of that field changes.
+
+18
+00:01:18,450 --> 00:01:24,990
+The view is automatically notified and updated right now let's save the changes back in the browser.
+
+19
+00:01:25,750 --> 00:01:27,470
+All right here's our new title.
+
+20
+00:01:27,670 --> 00:01:29,390
+Beautiful.
+
+21
+00:01:29,400 --> 00:01:33,260
+Now back here we don't always have to put the name of Phil here.
+
+22
+00:01:33,450 --> 00:01:36,510
+We can write any simple javascript expressions.
+
+23
+00:01:36,780 --> 00:01:39,440
+For example I can put a string here.
+
+24
+00:01:39,840 --> 00:01:45,260
+Title column and then concatenate this with our title field.
+
+25
+00:01:45,520 --> 00:01:50,380
+Save like this is our new title.
+
+26
+00:01:50,540 --> 00:01:54,380
+Here we can also call a method in this class to get some value.
+
+27
+00:01:54,440 --> 00:02:06,430
+For example I've modified a method get title and here I'm going to return this the title now here we
+
+28
+00:02:06,430 --> 00:02:13,720
+can simply call our new method get title like this and we'll get the exact same result.
+
+29
+00:02:14,570 --> 00:02:15,620
+There you go.
+
+30
+00:02:15,680 --> 00:02:22,490
+This of course is so this special syntax year we call it strange.
+
+31
+00:02:23,620 --> 00:02:27,250
+In the next lecture I'm going to show you how to render a list of courses here.
+

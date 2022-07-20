@@ -1,0 +1,200 @@
+1
+00:00:02,150 --> 00:00:02,400
+All right.
+
+2
+00:00:02,400 --> 00:00:08,190
+Now let's take this example to the next level instead of displaying a simple title field you want to
+
+3
+00:00:08,190 --> 00:00:10,710
+display the list of courses.
+
+4
+00:00:10,710 --> 00:00:14,250
+So first when is a field to hold a list or courses.
+
+5
+00:00:14,250 --> 00:00:20,430
+So courses we said this to an airy with three items.
+
+6
+00:00:20,620 --> 00:00:25,660
+Of course one of course two and course three.
+
+7
+00:00:25,720 --> 00:00:27,280
+Now this is a simplified example.
+
+8
+00:00:27,280 --> 00:00:33,100
+In a real world application instead of simple strings here you would have objects but don't worry we're
+
+9
+00:00:33,100 --> 00:00:34,500
+going to get there.
+
+10
+00:00:34,630 --> 00:00:39,350
+Now I want to display these in our template how should we do that.
+
+11
+00:00:39,370 --> 00:00:48,100
+First we need to change this single code to the back take character so delete tactic acting is the character
+
+12
+00:00:48,130 --> 00:00:48,840
+before.
+
+13
+00:00:48,880 --> 00:00:50,550
+Number one on your keyboard.
+
+14
+00:00:50,890 --> 00:00:52,780
+That may change just as well.
+
+15
+00:00:52,780 --> 00:00:58,450
+Now the benefit of using the back tick is that we can break up this template into multiple lines and
+
+16
+00:00:58,450 --> 00:01:00,040
+make it more readable.
+
+17
+00:01:00,070 --> 00:01:12,050
+So I want to put this H-2 here and below that I want to add a UL and a bunch of list item elements like
+
+18
+00:01:12,050 --> 00:01:13,090
+this.
+
+19
+00:01:13,100 --> 00:01:16,580
+Now I want to repeat this lie for each course.
+
+20
+00:01:16,580 --> 00:01:21,650
+Now for that we need to use one of the angular building blocks called directive.
+
+21
+00:01:21,650 --> 00:01:24,890
+We use directives to manipulate the DOM.
+
+22
+00:01:25,040 --> 00:01:31,370
+We can use them to add a dom element or remove an existing dumb element or change to a class of a dom
+
+23
+00:01:31,370 --> 00:01:34,250
+element or its style and so on.
+
+24
+00:01:34,280 --> 00:01:42,500
+So here you're going to use a special directive called Engy for use it like an attribute in extrema.
+
+25
+00:01:42,770 --> 00:01:44,180
+So we set it to a string.
+
+26
+00:01:44,390 --> 00:01:48,610
+And here we are going to write some expression now before going any further.
+
+27
+00:01:48,830 --> 00:01:52,650
+We should prefix this attribute with an asterisk.
+
+28
+00:01:52,700 --> 00:01:53,950
+It's a special syntax.
+
+29
+00:01:53,970 --> 00:01:54,770
+Angular.
+
+30
+00:01:54,950 --> 00:02:01,160
+So whenever you're using a directive that modifies the structure of a dom you should prefix that directive
+
+31
+00:02:01,430 --> 00:02:02,630
+with an asterisk.
+
+32
+00:02:02,780 --> 00:02:05,080
+In case you're curious about the reason I have covered it.
+
+33
+00:02:05,080 --> 00:02:07,510
+Later in the section about directives.
+
+34
+00:02:07,550 --> 00:02:12,740
+So for now just remember whenever you are using a directive that modifies the structure of the dom by
+
+35
+00:02:12,860 --> 00:02:17,900
+adding or removing an element you need to prefix that with an asterisk.
+
+36
+00:02:17,900 --> 00:02:24,570
+Now here we want to write an expression similar to what you write in for each blocks so let.
+
+37
+00:02:24,800 --> 00:02:28,120
+Course of courses.
+
+38
+00:02:28,190 --> 00:02:34,840
+What does this mean with the left key word we are defining invaluable so the names are valuable as course.
+
+39
+00:02:34,850 --> 00:02:37,170
+This is like a loop variable in javascript.
+
+40
+00:02:37,660 --> 00:02:43,980
+All is a special keyword and courses is the field in this class that you are iterating over.
+
+41
+00:02:44,390 --> 00:02:51,240
+So when you receive this expression it's going to iterate over the Course's field and in each iteration.
+
+42
+00:02:51,410 --> 00:02:55,370
+This course variable will hold the value of one course at a time.
+
+43
+00:02:55,370 --> 00:03:00,040
+Now inside this list I know you want to display this course.
+
+44
+00:03:00,200 --> 00:03:03,080
+So once again we use string interpolation.
+
+45
+00:03:03,080 --> 00:03:04,350
+Double curly braces.
+
+46
+00:03:05,270 --> 00:03:07,710
+And add this course variable here.
+
+47
+00:03:07,910 --> 00:03:09,060
+Let's look at the result.
+
+48
+00:03:09,140 --> 00:03:15,230
+Save can the browser and here we have the list of workhorses beautiful.
+
+49
+00:03:15,500 --> 00:03:20,840
+Now in most real world applications we get these courses from the server and for that we need to use
+
+50
+00:03:21,020 --> 00:03:25,610
+another building block of Angella called a service and that's the topic for the next lecture.
+

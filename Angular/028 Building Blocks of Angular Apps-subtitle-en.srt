@@ -1,0 +1,192 @@
+1
+00:00:02,210 --> 00:00:05,800
+So now do you have some basic familiarity with angular.
+
+2
+00:00:05,930 --> 00:00:11,200
+Let's look at the building blocks of angular apse at the heart of every angle or app.
+
+3
+00:00:11,240 --> 00:00:13,710
+We have one or more components.
+
+4
+00:00:13,850 --> 00:00:17,980
+In fact in a real world app we have tens or hundreds of components.
+
+5
+00:00:18,200 --> 00:00:26,270
+But what is a component a component encapsulates the data the HMO markup and the logic for a view which
+
+6
+00:00:26,270 --> 00:00:29,030
+is the area of the screen that the user sees.
+
+7
+00:00:29,360 --> 00:00:31,400
+Let's look at the real world example.
+
+8
+00:00:31,490 --> 00:00:34,780
+Imagine we're going to build a Web site like you the me.
+
+9
+00:00:34,840 --> 00:00:42,250
+So on this page we have a navigation bar a sidebar and an area to display the list of courses.
+
+10
+00:00:42,370 --> 00:00:50,450
+Now we can think of all this as one view or one component or we can break this view into smaller more
+
+11
+00:00:50,450 --> 00:00:57,610
+maintainable and potentially reusable components like nav bar component side bar component and of course
+
+12
+00:00:57,650 --> 00:00:58,860
+component.
+
+13
+00:00:58,880 --> 00:01:05,300
+Similarly in courses component we want to display one or more courses potentially we can break up this
+
+14
+00:01:05,300 --> 00:01:10,500
+component into smaller components and also to take it to the next level.
+
+15
+00:01:10,580 --> 00:01:14,080
+Each course component can include a rating component.
+
+16
+00:01:14,480 --> 00:01:20,180
+Now we can reuse this rating component in multiple places in the same app or in an entirely different
+
+17
+00:01:20,180 --> 00:01:20,770
+app.
+
+18
+00:01:21,350 --> 00:01:28,910
+As you see angular embraces component base architecture which allows us to work on smaller and more
+
+19
+00:01:28,910 --> 00:01:33,400
+maintainable pieces that can also be reused in different places.
+
+20
+00:01:33,440 --> 00:01:40,580
+So once again a component capturing the data HMO Marco and the logic for a view which is an area of
+
+21
+00:01:40,580 --> 00:01:47,450
+the screen that the user sees every application has at least one component which we call app component
+
+22
+00:01:47,510 --> 00:01:49,270
+or root component.
+
+23
+00:01:49,460 --> 00:01:55,520
+And real world anger is essentially a tree of components starting from the app component or the root
+
+24
+00:01:55,520 --> 00:01:56,740
+component.
+
+25
+00:01:56,750 --> 00:02:01,030
+Now in Angleterre we also have another concept called modules.
+
+26
+00:02:01,120 --> 00:02:05,350
+A module is a container for a group of related components.
+
+27
+00:02:05,510 --> 00:02:12,070
+Every single or app has at least one module which we call module as your application grows.
+
+28
+00:02:12,140 --> 00:02:17,360
+You may want to break that module into smaller more maintainable modules.
+
+29
+00:02:17,600 --> 00:02:22,910
+So you know Eudemus example we can potentially have modules like course module which includes all the
+
+30
+00:02:22,910 --> 00:02:29,420
+components for displaying courses we can potentially have another module like messaging module which
+
+31
+00:02:29,420 --> 00:02:34,880
+includes a bunch of components for the area of the Web site where you can send private messages to your
+
+32
+00:02:34,880 --> 00:02:36,040
+instructors.
+
+33
+00:02:36,080 --> 00:02:41,520
+We can have an instructor module which includes the components for instructors dashboard that you don't
+
+34
+00:02:41,520 --> 00:02:48,240
+see and potentially admen module which is the area of the UDP Web site managed by the Eudemus staff.
+
+35
+00:02:48,470 --> 00:02:52,090
+As an analogy think of a supermarket in a supermarket.
+
+36
+00:02:52,100 --> 00:02:55,580
+We have different aisles for different products.
+
+37
+00:02:55,580 --> 00:02:58,070
+We have a section for fruits and vegetables.
+
+38
+00:02:58,070 --> 00:03:02,880
+We have another section for snacks and other for hardware and so on.
+
+39
+00:03:02,990 --> 00:03:08,210
+The bigger the supermarket the more aisles we have in a tiny grocery store.
+
+40
+00:03:08,240 --> 00:03:11,300
+We have probably one or two aisles at the most.
+
+41
+00:03:11,330 --> 00:03:13,520
+The same applies to our angler hops.
+
+42
+00:03:13,520 --> 00:03:19,700
+So if you're building a simple application we have only one module which we call the app Argile But
+
+43
+00:03:19,700 --> 00:03:25,610
+as our application grows in functionality we may need to break that module into smaller modules with
+
+44
+00:03:25,670 --> 00:03:32,810
+each module responsible for a specific area of our application in that module we have a bunch of related
+
+45
+00:03:32,810 --> 00:03:33,700
+components.
+
+46
+00:03:33,830 --> 00:03:34,730
+OK.
+
+47
+00:03:34,730 --> 00:03:39,770
+So this is the big picture as we go through this course you will learn about these building blocks in
+
+48
+00:03:39,770 --> 00:03:40,580
+more detail.
+

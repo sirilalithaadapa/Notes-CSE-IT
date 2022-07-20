@@ -1,0 +1,540 @@
+1
+00:00:02,000 --> 00:00:04,980
+All right now let's see this component in action.
+
+2
+00:00:05,080 --> 00:00:09,360
+There are basically three steps you need to follow in order to use a component.
+
+3
+00:00:09,460 --> 00:00:11,380
+First you need to create a component.
+
+4
+00:00:11,440 --> 00:00:14,510
+Second you need to register that component in a module.
+
+5
+00:00:14,590 --> 00:00:20,850
+And third you need to add an element in your HCM Omarska that show you what I mean by these.
+
+6
+00:00:20,860 --> 00:00:28,270
+So back backing our first angler project first of all make sure to run and just serve to serve this
+
+7
+00:00:28,270 --> 00:00:32,840
+application.
+
+8
+00:00:32,850 --> 00:00:36,120
+So now if you head over to localhost for the two hundred.
+
+9
+00:00:36,120 --> 00:00:37,070
+This is what you see.
+
+10
+00:00:37,170 --> 00:00:37,730
+Beautiful.
+
+11
+00:00:38,810 --> 00:00:42,680
+Now back in Vesco I'm going to create a new component.
+
+12
+00:00:42,680 --> 00:00:48,640
+So let's open up the fire panel here in the source folder under app.
+
+13
+00:00:48,790 --> 00:00:50,080
+Yeah I'm going to add the new five.
+
+14
+00:00:51,850 --> 00:00:52,630
+Now let's imagine.
+
+15
+00:00:52,660 --> 00:00:56,530
+I want to create a component to display the list of courses.
+
+16
+00:00:56,530 --> 00:01:03,990
+So look how I named this fire courses dot component dot TS.
+
+17
+00:01:04,030 --> 00:01:09,220
+This is the convention that we use when building Engler applications that if the name of the component
+
+18
+00:01:09,220 --> 00:01:13,150
+has multiple wards we separate them using a hyphen.
+
+19
+00:01:13,150 --> 00:01:19,720
+For example if you're building a component called coarse form you would call this coarse dash form and
+
+20
+00:01:19,720 --> 00:01:21,320
+then dart component.
+
+21
+00:01:21,340 --> 00:01:21,830
+Yes.
+
+22
+00:01:21,900 --> 00:01:22,580
+OK.
+
+23
+00:01:23,020 --> 00:01:34,200
+So courses that come on in the TS here we start by creating a plain text class so class of course courses
+
+24
+00:01:34,610 --> 00:01:36,630
+components.
+
+25
+00:01:36,760 --> 00:01:39,610
+Once again look at the naming convention here.
+
+26
+00:01:39,610 --> 00:01:42,560
+I'm using the Pascal naming convention.
+
+27
+00:01:42,610 --> 00:01:49,990
+So the first letter of every word should be capital and also by convention we use the suffix component
+
+28
+00:01:50,320 --> 00:01:52,320
+in the name of the class.
+
+29
+00:01:52,330 --> 00:01:54,580
+So here's our class.
+
+30
+00:01:54,580 --> 00:02:00,960
+In order for Anglo to see this class Erse we need to export is there so far we have only a plain top
+
+31
+00:02:00,960 --> 00:02:01,720
+secret class.
+
+32
+00:02:01,750 --> 00:02:05,950
+This is not a component in order to convert this to a component.
+
+33
+00:02:05,950 --> 00:02:09,410
+We need to add some meta data to read that anger understands.
+
+34
+00:02:09,640 --> 00:02:12,550
+We use a decorator to achieve this.
+
+35
+00:02:12,550 --> 00:02:19,840
+In England we have a decorator called component that we can attach to a class to make a class A component.
+
+36
+00:02:19,840 --> 00:02:23,020
+So first we need to import this decorator on the top.
+
+37
+00:02:23,320 --> 00:02:26,270
+So import curly braces.
+
+38
+00:02:27,190 --> 00:02:29,600
+Component from.
+
+39
+00:02:30,190 --> 00:02:31,600
+Now the name of the library.
+
+40
+00:02:31,730 --> 00:02:38,840
+So at angular slash core this is the core library of are that you're going to see a lot in this course.
+
+41
+00:02:38,950 --> 00:02:44,840
+So here we import the component decorator and then when it's applied there is typescript class.
+
+42
+00:02:44,860 --> 00:02:51,800
+Now look at the syntax rules at same component and then call this like a function.
+
+43
+00:02:52,290 --> 00:02:55,740
+So this is what we call a decorator function.
+
+44
+00:02:55,770 --> 00:02:59,050
+Now this function as you see here takes an argument.
+
+45
+00:02:59,070 --> 00:03:05,160
+So here we pass an object and in this object we add one or more properties to tell angle Engler how
+
+46
+00:03:05,160 --> 00:03:06,880
+this component works.
+
+47
+00:03:06,930 --> 00:03:11,500
+For example one property that we use quite often is selector.
+
+48
+00:03:11,850 --> 00:03:16,300
+So selector and we said this to a CSSA selector.
+
+49
+00:03:16,470 --> 00:03:25,320
+So in CSSA if I want to reference an element like this I use a selector like this if I want to reference
+
+50
+00:03:25,320 --> 00:03:33,950
+an element like a div that has a class called coursers by selector would be docked courses.
+
+51
+00:03:33,950 --> 00:03:34,630
+Right.
+
+52
+00:03:34,960 --> 00:03:42,560
+And if I want to reference an element with the ID courses this is my selector just basics yes.
+
+53
+00:03:42,570 --> 00:03:43,310
+OK.
+
+54
+00:03:43,540 --> 00:03:47,930
+So here we want to reference an element called courses.
+
+55
+00:03:47,950 --> 00:03:48,580
+Why.
+
+56
+00:03:48,820 --> 00:03:56,500
+Because with components we can extend H.M.S. vocabulary so we can define new elements like courses and
+
+57
+00:03:56,500 --> 00:04:02,980
+inside that we will have a list of courses or in the future we can define custom elements a custom HDMI
+
+58
+00:04:03,010 --> 00:04:08,650
+element called rating and wherever we use that and Giller will render a rating component.
+
+59
+00:04:08,860 --> 00:04:15,270
+OK so let's delete this selector for just component courses.
+
+60
+00:04:15,310 --> 00:04:22,260
+Now the second property we add here is template and that's the HDMI markup we want to be rendered or
+
+61
+00:04:22,270 --> 00:04:23,350
+just component.
+
+62
+00:04:23,740 --> 00:04:26,160
+Now here I want to render something very simple.
+
+63
+00:04:26,290 --> 00:04:33,770
+So let's just add an H to element and call these courses in a real world application.
+
+64
+00:04:33,910 --> 00:04:36,100
+Our templates can be several lines of code.
+
+65
+00:04:36,340 --> 00:04:40,190
+In that case we can put them in a separate file and I'm going to show you how that works.
+
+66
+00:04:40,300 --> 00:04:41,710
+Later in the course.
+
+67
+00:04:41,810 --> 00:04:45,460
+So this is a basic component in angular.
+
+68
+00:04:45,490 --> 00:04:47,020
+That was the first step.
+
+69
+00:04:47,200 --> 00:04:53,260
+The second step is to register these components in a module that currently our application has only
+
+70
+00:04:53,260 --> 00:04:56,180
+one module which we call module.
+
+71
+00:04:56,200 --> 00:04:57,660
+Let me show you where that is.
+
+72
+00:04:58,000 --> 00:05:04,810
+So back here in the app folder look we have app that module.
+
+73
+00:05:05,020 --> 00:05:08,430
+Now once again here we have three import statements on the top.
+
+74
+00:05:08,430 --> 00:05:15,780
+So nothing special here on the bottom we have a typescript class called app module and note that this
+
+75
+00:05:15,780 --> 00:05:22,460
+class is decorated with another decorator function called Engy module.
+
+76
+00:05:22,470 --> 00:05:30,120
+So with this we convert a plain task class to a module from angler's point of view that don't worry
+
+77
+00:05:30,120 --> 00:05:32,800
+about all these properties here like declarations.
+
+78
+00:05:32,850 --> 00:05:37,660
+Import providers and bootstrap you're going to learn about them later in the course.
+
+79
+00:05:37,680 --> 00:05:44,310
+What I wanted to focus on now is this property declarations and this is where we add all the components
+
+80
+00:05:44,310 --> 00:05:46,250
+that are part of this module.
+
+81
+00:05:46,290 --> 00:05:51,990
+So by default when we generate an application we have one component called app component and you can
+
+82
+00:05:51,990 --> 00:05:55,550
+see that component is part of this module.
+
+83
+00:05:55,560 --> 00:06:03,120
+Now I'm going to add our new component here so coursers component.
+
+84
+00:06:03,220 --> 00:06:09,450
+So whenever I type the name of a class here and press enter it automatically imported.
+
+85
+00:06:09,450 --> 00:06:10,740
+On top of my file.
+
+86
+00:06:11,240 --> 00:06:14,370
+So import coursers component from.
+
+87
+00:06:14,470 --> 00:06:16,710
+And here's the name of our typescript module.
+
+88
+00:06:16,900 --> 00:06:20,410
+So period slash which refers to the current folder.
+
+89
+00:06:20,530 --> 00:06:21,940
+And here's the name of the file.
+
+90
+00:06:21,940 --> 00:06:23,900
+Of course there's that component.
+
+91
+00:06:24,060 --> 00:06:27,070
+I know that here we don't have dot ts.
+
+92
+00:06:27,070 --> 00:06:30,460
+In fact if you add that type of computer it doesn't like that.
+
+93
+00:06:30,460 --> 00:06:34,480
+So the name of the module is just the name of the file without the extension.
+
+94
+00:06:35,340 --> 00:06:42,820
+So if you want to add this plug into your vs code simply go here and in the extension of search box
+
+95
+00:06:42,940 --> 00:06:46,570
+search for auto import.
+
+96
+00:06:46,620 --> 00:06:51,190
+So I think I'm using our import one point to point to simply install.
+
+97
+00:06:51,240 --> 00:06:55,080
+And then you'll have to restart the escrowed.
+
+98
+00:06:55,090 --> 00:06:56,940
+All right so here's our second step.
+
+99
+00:06:57,020 --> 00:07:00,220
+Now the third step back our component.
+
+100
+00:07:00,500 --> 00:07:07,360
+So this is the selector for this component which means anywhere we have an element like courses and
+
+101
+00:07:07,420 --> 00:07:12,980
+it is going to render the template for this component inside that element but where are we going to
+
+102
+00:07:12,980 --> 00:07:14,360
+add that element.
+
+103
+00:07:14,390 --> 00:07:15,260
+Let me show you.
+
+104
+00:07:15,590 --> 00:07:21,470
+So I Kurian the app fuller we have this app called component that HDMI.
+
+105
+00:07:21,570 --> 00:07:25,030
+This is the external template for our app component.
+
+106
+00:07:25,110 --> 00:07:27,890
+Let's have a look.
+
+107
+00:07:28,150 --> 00:07:32,330
+So all this markup you see here is for rendering the home page.
+
+108
+00:07:32,520 --> 00:07:34,710
+And this is what we get.
+
+109
+00:07:34,750 --> 00:07:35,940
+Now I want to simplify this.
+
+110
+00:07:35,950 --> 00:07:44,410
+I'm going to get rid of all this markup at a simple H-1 Corless and Giller and below that I'm going
+
+111
+00:07:44,410 --> 00:07:53,070
+to add our custom elements courses so when Engler sees this element it's going to render the template
+
+112
+00:07:53,400 --> 00:07:55,720
+of our coursers component.
+
+113
+00:07:55,890 --> 00:07:58,760
+Right now back in the browser This is our new home page.
+
+114
+00:07:58,850 --> 00:08:04,700
+So let's Right-Click this course is aliment and inspect this.
+
+115
+00:08:04,710 --> 00:08:06,030
+So look what we have here.
+
+116
+00:08:06,850 --> 00:08:14,350
+We had this H1 and below that we have our courses element and inside this you can see we have the template
+
+117
+00:08:14,350 --> 00:08:16,100
+for our coursers components.
+
+118
+00:08:16,480 --> 00:08:19,090
+So this is how angry applications work.
+
+119
+00:08:19,090 --> 00:08:26,820
+As another example look at this app root element inside the body element raises Taproot.
+
+120
+00:08:26,890 --> 00:08:33,780
+Well I can the source folder and index that HMO.
+
+121
+00:08:33,850 --> 00:08:40,150
+So this is the basic template for our application right now inside the body element we have an element
+
+122
+00:08:40,150 --> 00:08:42,220
+called Dashrath.
+
+123
+00:08:42,250 --> 00:08:48,050
+This is a custom element because we don't have an element in HMO called Schrute.
+
+124
+00:08:48,100 --> 00:08:54,550
+So from Anglo's point of view we should have a component with a selector for this element and that's
+
+125
+00:08:54,550 --> 00:08:56,300
+our app component.
+
+126
+00:08:56,320 --> 00:08:58,360
+Let's have a look at that.
+
+127
+00:08:58,360 --> 00:09:05,850
+So back in the app folder let's look at app that component that TS.
+
+128
+00:09:05,930 --> 00:09:11,460
+So here's our route component our app components look at the selector app Schrute.
+
+129
+00:09:11,550 --> 00:09:18,120
+So whenever Anglo's sees an element like that it's going to render the template for this component inside
+
+130
+00:09:18,120 --> 00:09:19,070
+that element.
+
+131
+00:09:19,200 --> 00:09:21,240
+In this case our template is external.
+
+132
+00:09:21,240 --> 00:09:26,640
+So we have a template you are l and you can see the name of our template file after each component that
+
+133
+00:09:26,670 --> 00:09:28,440
+H-G about.
+
+134
+00:09:28,460 --> 00:09:35,240
+So that's why inside app Dasch wrote here we have the template for app component which includes an H1
+
+135
+00:09:35,600 --> 00:09:36,690
+and the course is aliment.
+
